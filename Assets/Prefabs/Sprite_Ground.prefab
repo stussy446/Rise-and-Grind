@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3834791690355528052}
   - component: {fileID: 2302738812603765396}
   m_Layer: 7
-  m_Name: 'Ground '
+  m_Name: Sprite_Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
