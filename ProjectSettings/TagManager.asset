@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Bean
   layers:
   - Default
   - TransparentFX
@@ -11,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Platforms
+  - Beans
   - 
   - 
   - 
@@ -40,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 100624577
+    locked: 0
+  - name: Player
+    uniqueID: 1277996091
     locked: 0
