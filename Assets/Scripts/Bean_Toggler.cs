@@ -5,9 +5,9 @@ using UnityEngine;
 public class Bean_Toggler : MonoBehaviour
 {
 
-    float _timeDeactiated;
     [Tooltip("seconds until bean reactivates")]
     [SerializeField] float secondsUntilReactivation = 3f;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,9 +17,15 @@ public class Bean_Toggler : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Called in Trigger function. Waits for set amount of seconds and then
+    /// reactivates the object's collider and sprite renderer
+    /// </summary>
+    /// <returns></returns>
     IEnumerator ReactivateBean()
     {
         yield return new WaitForSeconds(secondsUntilReactivation);
+
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = true;
     }

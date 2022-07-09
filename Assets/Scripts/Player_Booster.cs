@@ -7,12 +7,11 @@ public class Player_Booster : MonoBehaviour
     [SerializeField] float boostSpeed = 1f;
     [SerializeField] int beanLayerIndex = 8;
     Rigidbody2D _playerRigidBody;
-    BoxCollider2D _playerBoxCollider;
+
 
     void Awake()
     {
         _playerRigidBody = GetComponent<Rigidbody2D>();
-        _playerBoxCollider = GetComponent<BoxCollider2D>();
     }
 
 
