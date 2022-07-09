@@ -16,7 +16,12 @@ public class Player_Controller : MonoBehaviour
     [Tooltip("adjusts height of jump")][SerializeField] float jumpHeight = 1f;
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
 
-    [SerializeField] LayerMask platformLayerMask;  // layermask for raycast to detect 
+    [Header("Layer Masks")]
+    [SerializeField] LayerMask platformLayerMask;  
+    [SerializeField] LayerMask enemiesLayerMask;
+
+    [Header("Hitbox Colliders")]
+    [SerializeField] PolygonCollider2D swingCollider;
     
 
     private void Awake()
@@ -32,9 +37,10 @@ public class Player_Controller : MonoBehaviour
         _playerControls.Enable();
 
         _playerControls.Player.Jump.performed += Jump;
+        _playerControls.Player.Fire.performed += Attack;
     }
 
-
+    
     private void Update()
     {
         _moveInputXValue = _playerControls.Player.Move.ReadValue<Vector2>().x;
@@ -76,6 +82,25 @@ public class Player_Controller : MonoBehaviour
         {
             _playerRigidBody.AddForce(Vector2.up * jumpHeight);
            
+        }
+    }
+
+
+    /// <summary>
+    /// Called any time attack input action is performed. Generates hitbox that
+    /// causes player to propel a direction if it hits an enemy 
+    /// </summary>
+    /// <param name="context"></param>
+    private void Attack(InputAction.CallbackContext context)
+    {
+        if (swingCollider.IsTouchingLayers(enemiesLayerMask))
+        {
+            Debug.Log("enemy hit");
+            _playerRigidBody.AddForce(Vector2.up * jumpHeight);
+        }
+        else
+        {
+            Debug.Log("enemy missed");
         }
     }
 
