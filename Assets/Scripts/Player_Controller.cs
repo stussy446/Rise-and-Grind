@@ -15,6 +15,7 @@ public class Player_Controller : MonoBehaviour
 
     [Header("Move Speed and Jump Height")]
     [Tooltip("adjusts height of jump")][SerializeField] float jumpHeight = 1f;
+    [Tooltip("adjusts fall spped of jump")][SerializeField] float fallMultiplier = 2.5f;
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
 
     [Header("Layer Masks")]
@@ -28,6 +29,7 @@ public class Player_Controller : MonoBehaviour
     {
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
+
     }
 
 
@@ -58,6 +60,7 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        HandleFall();
     }
 
 
@@ -88,7 +91,20 @@ public class Player_Controller : MonoBehaviour
         if (IsGrounded())
         {
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-           
+
+        }
+    }
+
+
+    /// <summary>
+    /// Called during update, whenver the players velocity is less then 0 (IE
+    /// player is falling), increase gravity on player for faster fall
+    /// </summary>
+    private void HandleFall()
+    {
+        if (_playerRigidBody.velocity.y < 0)
+        {
+            _playerRigidBody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
     }
 
@@ -132,7 +148,6 @@ public class Player_Controller : MonoBehaviour
         float extraHeightTest = .02f;
         RaycastHit2D raycastHit = Physics2D.Raycast(_playerBoxCollider.bounds.center, Vector2.down, _playerBoxCollider.bounds.extents.y + extraHeightTest, platformLayerMask);
 
-      
         return raycastHit.collider != null;
     }
 

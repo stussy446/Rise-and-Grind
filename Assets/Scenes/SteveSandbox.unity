@@ -926,6 +926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Player Rig '
       objectReference: {fileID: 0}
+    - target: {fileID: 3284378201965242069, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_RootOrder
       value: 1
