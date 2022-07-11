@@ -9,7 +9,8 @@ public class Player_Controller : MonoBehaviour
     Rigidbody2D _playerRigidBody;
     BoxCollider2D _playerBoxCollider;
     PlayerControls _playerControls;
-    float _moveInputXValue;    // x value returned from Vector2 when player inputs move action
+    float _moveInputXValue;    
+    bool playerIsAttacking = false;
 
 
     [Header("Move Speed and Jump Height")]
@@ -18,10 +19,9 @@ public class Player_Controller : MonoBehaviour
 
     [Header("Layer Masks")]
     [SerializeField] LayerMask platformLayerMask;  
-    [SerializeField] LayerMask enemiesLayerMask;
 
     [Header("Hitbox Colliders")]
-    [SerializeField] PolygonCollider2D swingCollider;
+    [SerializeField] BoxCollider2D swingCollider;
     
 
     private void Awake()
@@ -31,6 +31,11 @@ public class Player_Controller : MonoBehaviour
     }
 
 
+    // getter for playerIsAttacking, used in Player_Booster to determine if the
+    // player will be boosted by an enemy attack or not 
+    public bool GetPlayerIsAttacking() { return playerIsAttacking; }
+
+
     private void OnEnable()
     {
         _playerControls = new PlayerControls();
@@ -38,9 +43,11 @@ public class Player_Controller : MonoBehaviour
 
         _playerControls.Player.Jump.performed += Jump;
         _playerControls.Player.Fire.performed += Attack;
+        _playerControls.Player.Fire.canceled += StopAttack;
+
     }
 
-    
+
     private void Update()
     {
         _moveInputXValue = _playerControls.Player.Move.ReadValue<Vector2>().x;
@@ -80,31 +87,40 @@ public class Player_Controller : MonoBehaviour
     {
         if (IsGrounded())
         {
-            _playerRigidBody.AddForce(Vector2.up * jumpHeight);
+            _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
            
         }
     }
 
 
     /// <summary>
-    /// Called any time attack input action is performed. Generates hitbox that
-    /// causes player to propel a direction if it hits an enemy 
+    /// Called any time attack input action is performed. Generates hitbox while
+    /// action is being performed and sets playerIsAttacking state to true
     /// </summary>
     /// <param name="context"></param>
     private void Attack(InputAction.CallbackContext context)
     {
-        if (swingCollider.IsTouchingLayers(enemiesLayerMask))
-        {
-            Debug.Log("enemy hit");
-            _playerRigidBody.AddForce(Vector2.up * jumpHeight);
-        }
-        else
-        {
-            Debug.Log("enemy missed");
-        }
+        playerIsAttacking = true;
+        swingCollider.GetComponent<BoxCollider2D>().enabled = true;
+        Debug.Log(playerIsAttacking);
+
     }
 
 
+    /// <summary>
+    /// Called when the attack input action is no longer being performed. Turns
+    /// off hitbox and sets playerIsAttacking state to false
+    /// </summary>
+    /// <param name="obj"></param>
+    private void StopAttack(InputAction.CallbackContext obj)
+    {
+        playerIsAttacking = false;
+        swingCollider.GetComponent<BoxCollider2D>().enabled = false;
+        Debug.Log(playerIsAttacking);
+
+    }
+
+   
     /// <summary>
     /// Called in Jump, utilizes raycast and layermasking to check if the player
     /// is touching a layer that they can jump on.

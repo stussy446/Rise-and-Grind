@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7524317389331509979}
   - component: {fileID: 8110076221215556325}
   - component: {fileID: 5802364711581470769}
+  - component: {fileID: -1501159130993679025}
   m_Layer: 9
   m_Name: Sprite_Enemy
   m_TagString: Enemy
@@ -140,3 +141,16 @@ PolygonCollider2D:
       - {x: 0.3163042, y: 0.053495646}
       - {x: 0.2525282, y: 0.24232006}
       - {x: 0.13003206, y: 0.3125}
+--- !u!114 &-1501159130993679025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143491318957757630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64957c48968834b32b412fdcbd917a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostSpeed: 25
