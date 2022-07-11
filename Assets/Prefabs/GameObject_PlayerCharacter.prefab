@@ -39,7 +39,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324429023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   enemiesLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  swingCollider: {fileID: 0}
+  swingCollider: {fileID: 1324429025}
 --- !u!114 &3016341875091497187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ee70caa8d54be9b74e0d2a5644439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostSpeed: 800
+  boostSpeed: 20
   beanLayerIndex: 8
 --- !u!1 &8798066849935724614
 GameObject:
