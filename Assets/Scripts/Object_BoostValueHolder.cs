@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bean_JumpHeightValues : MonoBehaviour
+public class Object_BoostValueHolder : MonoBehaviour
 {
     [SerializeField] float boostSpeed = 1f;
 

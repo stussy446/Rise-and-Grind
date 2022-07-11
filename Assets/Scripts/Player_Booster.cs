@@ -1,13 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Booster : MonoBehaviour
 {
-    [SerializeField] int beanLayerIndex = 8; // ideally want to find a better way to do this if time
 
     Rigidbody2D _playerRigidBody;
-    Bean_JumpHeightValues bean;
+    Object_BoostValueHolder boostValue;
     Vector2 boostVector = new Vector2(0, 1); // starting vector before it is multiples by boostSpeed
     
 
@@ -24,11 +24,17 @@ public class Player_Booster : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == beanLayerIndex)
-        {
-            bean = collision.gameObject.GetComponent<Bean_JumpHeightValues>();
-            _playerRigidBody.velocity= boostVector * bean.GetBoostSpeed();
-        }
+         boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
+         ProcessBoost(boostValue);
+        
     }
 
+    private void ProcessBoost(Object_BoostValueHolder collisonBoost)
+    {
+        if (collisonBoost)
+        {
+            _playerRigidBody.velocity = boostVector * collisonBoost.GetBoostSpeed();
+
+        }
+    }
 }
