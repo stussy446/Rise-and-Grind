@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7567973086532254741}
   - component: {fileID: 7567973086532254739}
   m_Layer: 0
-  m_Name: CameraSwitchTrigger
+  m_Name: Camera_SwitchTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,6 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9d5930b7eaf48f1864748e36c21c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinemachineSwitcher: {fileID: 8846725708106229351, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-  gate: {fileID: 3227453416618695884, guid: 2af0f2b8af8f94fa9acceb4842a536b0, type: 3}
+  cinemachineSwitcher: {fileID: 0}
+  gate: {fileID: 0}
   delayLength: 2
