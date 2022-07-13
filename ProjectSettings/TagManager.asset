@@ -8,6 +8,8 @@ TagManager:
   - Bean
   - Enemy
   - Camera
+  - Wall
+  - Gate
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Platforms
   - Beans
   - Enemies
-  - 
-  - 
+  - Walls
+  - Gates
   - 
   - 
   - 
