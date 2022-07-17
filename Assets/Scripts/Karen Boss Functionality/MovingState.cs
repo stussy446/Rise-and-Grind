@@ -36,4 +36,16 @@ public class MovingState : IKarenState
 
         context.SetState(new DyingState());
     }
+
+
+    public void EnterState(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
+
+    public void OnCollisionEnter(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

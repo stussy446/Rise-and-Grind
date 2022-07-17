@@ -33,4 +33,16 @@ public class AttackingState : IKarenState
         Debug.Log("transitioning from Attacking State to Dying state");
         context.SetState(new MovingState());
     }
+
+
+    public void EnterState(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
+
+    public void OnCollisionEnter(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

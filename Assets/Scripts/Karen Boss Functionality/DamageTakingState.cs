@@ -31,4 +31,16 @@ public class DamageTakingState : IKarenState
         Debug.Log("transitioning from DamageTaking State to Dying state");
         context.SetState(new DyingState());
     }
+
+
+    public void EnterState(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
+
+    public void OnCollisionEnter(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

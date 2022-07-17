@@ -30,4 +30,16 @@ public class IdlingState : IKarenState
     {
     }
 
+
+    public void EnterState(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
+
+    public void OnCollisionEnter(IKarenContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
 }

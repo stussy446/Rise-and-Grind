@@ -27,4 +27,14 @@ public class DyingState : IKarenState
     public void Dying(IKarenContext context)
     {
     }
+
+
+    public void EnterState(IKarenContext context)
+    {
+    }
+
+
+    public void OnCollisionEnter(IKarenContext context)
+    {
+    }
 }

@@ -3,6 +3,9 @@
 /// </summary>
 public interface IKarenState
 {
+    void EnterState(IKarenContext context);
+    void OnCollisionEnter(IKarenContext context);
+
     void Idling(IKarenContext context);
     void Moving(IKarenContext context);
     void Attacking(IKarenContext context);
