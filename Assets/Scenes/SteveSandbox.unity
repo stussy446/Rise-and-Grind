@@ -1098,7 +1098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129822192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.49, y: 14.89, z: 0}
+  m_LocalPosition: {x: 15.62, y: 8.17, z: 0}
   m_LocalScale: {x: 0.26827538, y: 0.26827538, z: 0.26827538}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,7 +1125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &2129822196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1152,18 +1152,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.480224, y: 7.3365655}
   m_EdgeRadius: 0
---- !u!114 &2129822197
-MonoBehaviour:
+--- !u!95 &2129822197
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129822192}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4617aefdd09fa48659dc04a836f69433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc3b3cf9aae7843bebbcdc900e3d7cf1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2137783911
 GameObject:
   m_ObjectHideFlags: 0
