@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2748571888518984877}
   - component: {fileID: 2335297870010492284}
   - component: {fileID: 4324631979982404615}
-  - component: {fileID: 4581098590554324617}
   - component: {fileID: 2869649440757434402}
   m_Layer: 8
   m_Name: Sprite_Bean
@@ -117,19 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsUntilReactivation: 3
---- !u!114 &4581098590554324617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5218527978341460811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64957c48968834b32b412fdcbd917a9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boostSpeed: 25
 --- !u!114 &2869649440757434402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64957c48968834b32b412fdcbd917a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostSpeed: 1
+  boostSpeed: 25

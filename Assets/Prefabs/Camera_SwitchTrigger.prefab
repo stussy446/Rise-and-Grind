@@ -72,5 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinemachineSwitcher: {fileID: 0}
-  gate: {fileID: 0}
-  delayLength: 2
+  gates:
+  - {fileID: 0}
+  - {fileID: 0}
+  delayLength: 0.5
+  karen: {fileID: 0}
