@@ -14,12 +14,16 @@ public class CameraTriggerHandler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         cinemachineSwitcher.SwitchState();
-        StartCoroutine(ActivateGate());
+        if (gates.Length > 0)
+        {
+            StartCoroutine(ActivateGates());
+
+        }
         GetComponent<BoxCollider2D>().enabled = false;
         karen.SetActive(true);
     }
 
-    IEnumerator ActivateGate()
+    IEnumerator ActivateGates()
     {
         yield return new WaitForSeconds(delayLength);
         foreach (var gate in gates)

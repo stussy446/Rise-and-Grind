@@ -51,6 +51,15 @@ TagManager:
   - name: Background
     uniqueID: 100624577
     locked: 0
+  - name: Platforms
+    uniqueID: 2559409247
+    locked: 0
+  - name: Bean
+    uniqueID: 3094355711
+    locked: 0
+  - name: Enemy
+    uniqueID: 743623333
+    locked: 0
   - name: Player
     uniqueID: 1277996091
     locked: 0
