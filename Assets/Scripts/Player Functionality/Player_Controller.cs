@@ -77,7 +77,7 @@ public class Player_Controller : MonoBehaviour
     private void Move()
     {
         Vector2 processedMoveVector = new Vector2(_moveInputXValue, 0) * moveSpeed;
-        _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Force);
+        _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
     }
 
 

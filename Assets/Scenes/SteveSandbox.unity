@@ -1966,6 +1966,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: TouchControlsUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052613, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_MovementRange
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1532483
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1532483
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.286621
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
 --- !u!1001 &8846725706933902563
@@ -1979,22 +2003,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 972365592}
-    - target: {fileID: 8846725707291830776, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-      propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7783688
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846725707291830776, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846725707291830783, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.944919
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846725707291830783, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -13.452288
-      objectReference: {fileID: 0}
     - target: {fileID: 8846725708106229344, guid: 553f173158e304d4f87a1a041632164b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2051,14 +2059,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 972365592}
-    - target: {fileID: 8846725708151835132, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.944919
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846725708151835132, guid: 553f173158e304d4f87a1a041632164b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -14.562287
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 553f173158e304d4f87a1a041632164b, type: 3}
 --- !u!1001 &8928684519859545748
