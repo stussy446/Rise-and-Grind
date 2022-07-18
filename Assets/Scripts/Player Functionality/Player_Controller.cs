@@ -17,6 +17,8 @@ public class Player_Controller : MonoBehaviour
     [Tooltip("adjusts height of jump")][SerializeField] float jumpHeight = 1f;
     [Tooltip("adjusts fall spped of jump")][SerializeField] float fallMultiplier = 2.5f;
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
+    [Tooltip("adjusts speed of movement in the air")][SerializeField] float jumpMoveSpeedDivider = 2f;
+        
 
     [Header("Layer Masks")]
     [SerializeField] LayerMask platformLayerMask;  
@@ -72,12 +74,21 @@ public class Player_Controller : MonoBehaviour
 
     /// <summary>
     /// Called in FixedUpdate, takes in the players movinput and applies force
-    /// to player based on that input, allows for left and right movement
+    /// to player based on that input, allows for left and right movement.
+    /// Movement is slowed by the JumpMoveSpeedDivider if player is in the air
     /// </summary>
     private void Move()
     {
         Vector2 processedMoveVector = new Vector2(_moveInputXValue, 0) * moveSpeed;
-        _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
+        if (!IsGrounded())
+        {
+            _playerRigidBody.AddForce((processedMoveVector / jumpMoveSpeedDivider) * Time.deltaTime, ForceMode2D.Impulse);
+        }
+        else
+        {
+           _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
+
+        }
     }
 
 
@@ -90,6 +101,7 @@ public class Player_Controller : MonoBehaviour
     {
         if (IsGrounded())
         {
+
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
 
         }
