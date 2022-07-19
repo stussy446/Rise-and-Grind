@@ -11,6 +11,8 @@ public class Player_Controller : MonoBehaviour
     PlayerControls _playerControls;
     float _moveInputXValue;    
     bool playerIsAttacking = false;
+    bool canMove = true;
+    RigidbodyConstraints2D startingConstraints;
 
 
     [Header("Move Speed and Jump Height")]
@@ -18,7 +20,8 @@ public class Player_Controller : MonoBehaviour
     [Tooltip("adjusts fall spped of jump")][SerializeField] float fallMultiplier = 2.5f;
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
     [Tooltip("adjusts speed of movement in the air")][SerializeField] float jumpMoveSpeedDivider = 2f;
-        
+    [Tooltip("adjusts length golden mode exists")][SerializeField]  float goldenBeanLength = 5f;
+
 
     [Header("Layer Masks")]
     [SerializeField] LayerMask platformLayerMask;  
@@ -162,4 +165,26 @@ public class Player_Controller : MonoBehaviour
     }
 
 
+    public void SwitchToGoldenMovement()
+    {
+        if (canMove)
+        {
+             startingConstraints = _playerRigidBody.constraints;
+            canMove = !canMove;
+
+            // ENABLE NEW CONTROL
+            _playerRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
+            _playerControls.Disable();
+            StartCoroutine(NormalMovementTimer());
+        }
+    }
+
+    public IEnumerator NormalMovementTimer()
+    {
+        yield return new WaitForSeconds(goldenBeanLength);
+        canMove = !canMove;
+        _playerControls.Enable();
+        _playerRigidBody.constraints = startingConstraints;
+
+    }
 }
