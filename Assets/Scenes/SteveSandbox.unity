@@ -1569,6 +1569,10 @@ PrefabInstance:
       value: 'Player Rig '
       objectReference: {fileID: 0}
     - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: goldenBeanLength
       value: 5
       objectReference: {fileID: 0}

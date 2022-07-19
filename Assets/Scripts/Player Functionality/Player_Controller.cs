@@ -9,16 +9,20 @@ public class Player_Controller : MonoBehaviour
     Rigidbody2D _playerRigidBody;
     BoxCollider2D _playerBoxCollider;
     PlayerControls _playerControls;
-    float _moveInputXValue;    
+    float _moveInputXValue;
+    float _rotateInputValue;
     bool playerIsAttacking = false;
     bool canMove = true;
     RigidbodyConstraints2D startingConstraints;
+    float startingRotation = 0f;
 
 
     [Header("Move Speed and Jump Height")]
     [Tooltip("adjusts height of jump")][SerializeField] float jumpHeight = 1f;
     [Tooltip("adjusts fall spped of jump")][SerializeField] float fallMultiplier = 2.5f;
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
+    [Tooltip("adjusts speed of rotation")][SerializeField] float rotationSpeed = 1f;
+
     [Tooltip("adjusts speed of movement in the air")][SerializeField] float jumpMoveSpeedDivider = 2f;
     [Tooltip("adjusts length golden mode exists")][SerializeField]  float goldenBeanLength = 5f;
 
@@ -47,10 +51,12 @@ public class Player_Controller : MonoBehaviour
     {
         _playerControls = new PlayerControls();
         _playerControls.Enable();
+        _playerControls.GoldenPlayer.Disable();
 
         _playerControls.Player.Jump.performed += Jump;
         _playerControls.Player.Fire.performed += Attack;
         _playerControls.Player.Fire.canceled += StopAttack;
+
 
     }
 
@@ -58,6 +64,7 @@ public class Player_Controller : MonoBehaviour
     private void Update()
     {
         _moveInputXValue = _playerControls.Player.Move.ReadValue<Vector2>().x;
+        _rotateInputValue = _playerControls.GoldenPlayer.Rotate.ReadValue<Vector2>().x;
 
     }
 
@@ -65,6 +72,7 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        RotatePlayer();
         HandleFall();
     }
 
@@ -169,12 +177,14 @@ public class Player_Controller : MonoBehaviour
     {
         if (canMove)
         {
-             startingConstraints = _playerRigidBody.constraints;
+            startingConstraints = _playerRigidBody.constraints;
             canMove = !canMove;
 
             // ENABLE NEW CONTROL
             _playerRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
-            _playerControls.Disable();
+            _playerControls.Player.Disable();
+            _playerControls.GoldenPlayer.Enable();
+            Debug.Log("Switched to golden movement");
             StartCoroutine(NormalMovementTimer());
         }
     }
@@ -183,8 +193,21 @@ public class Player_Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(goldenBeanLength);
         canMove = !canMove;
-        _playerControls.Enable();
+        _playerControls.Player.Enable();
+        _playerControls.GoldenPlayer.Disable();
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         _playerRigidBody.constraints = startingConstraints;
 
+
+    }
+
+
+    void RotatePlayer()
+    {
+        if (_playerControls.GoldenPlayer.enabled)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -_rotateInputValue * rotationSpeed);
+
+        }
     }
 }

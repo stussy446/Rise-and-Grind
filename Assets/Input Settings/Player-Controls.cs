@@ -802,6 +802,98 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GoldenPlayer"",
+            ""id"": ""9c5eb7ce-34e2-4ba0-9d23-2c58f8577ce1"",
+            ""actions"": [
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""3071da48-4c7d-4e8c-80cf-0dd533c08d3f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d4c51e2-2800-4c0c-9766-debff4e78087"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""7e35b39e-26de-48b5-a360-e7cdff17e05a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""894b5ec4-8c0d-4776-bc4b-893613881c8c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""556f8611-338f-46b3-b97c-22e611712e76"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""24d2699b-668f-4af2-a64f-f1aecd993dad"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b96d1916-c289-41bf-b3b0-11476aaa84ee"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd185ad9-209a-4457-ae18-e49630aa773e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -885,6 +977,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // GoldenPlayer
+        m_GoldenPlayer = asset.FindActionMap("GoldenPlayer", throwIfNotFound: true);
+        m_GoldenPlayer_Rotate = m_GoldenPlayer.FindAction("Rotate", throwIfNotFound: true);
+        m_GoldenPlayer_Boost = m_GoldenPlayer.FindAction("Boost", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1102,6 +1198,47 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // GoldenPlayer
+    private readonly InputActionMap m_GoldenPlayer;
+    private IGoldenPlayerActions m_GoldenPlayerActionsCallbackInterface;
+    private readonly InputAction m_GoldenPlayer_Rotate;
+    private readonly InputAction m_GoldenPlayer_Boost;
+    public struct GoldenPlayerActions
+    {
+        private @PlayerControls m_Wrapper;
+        public GoldenPlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Rotate => m_Wrapper.m_GoldenPlayer_Rotate;
+        public InputAction @Boost => m_Wrapper.m_GoldenPlayer_Boost;
+        public InputActionMap Get() { return m_Wrapper.m_GoldenPlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GoldenPlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IGoldenPlayerActions instance)
+        {
+            if (m_Wrapper.m_GoldenPlayerActionsCallbackInterface != null)
+            {
+                @Rotate.started -= m_Wrapper.m_GoldenPlayerActionsCallbackInterface.OnRotate;
+                @Rotate.performed -= m_Wrapper.m_GoldenPlayerActionsCallbackInterface.OnRotate;
+                @Rotate.canceled -= m_Wrapper.m_GoldenPlayerActionsCallbackInterface.OnRotate;
+                @Boost.started -= m_Wrapper.m_GoldenPlayerActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m_GoldenPlayerActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m_GoldenPlayerActionsCallbackInterface.OnBoost;
+            }
+            m_Wrapper.m_GoldenPlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Rotate.started += instance.OnRotate;
+                @Rotate.performed += instance.OnRotate;
+                @Rotate.canceled += instance.OnRotate;
+                @Boost.started += instance.OnBoost;
+                @Boost.performed += instance.OnBoost;
+                @Boost.canceled += instance.OnBoost;
+            }
+        }
+    }
+    public GoldenPlayerActions @GoldenPlayer => new GoldenPlayerActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1166,5 +1303,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IGoldenPlayerActions
+    {
+        void OnRotate(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
     }
 }
