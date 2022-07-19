@@ -14,12 +14,12 @@ public class Player_Controller : MonoBehaviour
     bool playerIsAttacking = false;
     bool canMove = true;
     RigidbodyConstraints2D startingConstraints;
-    float startingRotation = 0f;
 
 
     [Header("Move Speed and Jump Height")]
     [Tooltip("adjusts height of jump")][SerializeField] float jumpHeight = 1f;
-    [Tooltip("adjusts fall spped of jump")][SerializeField] float fallMultiplier = 2.5f;
+    [Tooltip("adjusts height of golden bean boost")][SerializeField] float goldenHeight = 5f;
+    [Tooltip("adjusts fall speed of jump")][SerializeField] float fallMultiplier = 2.5f;
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
     [Tooltip("adjusts speed of rotation")][SerializeField] float rotationSpeed = 1f;
 
@@ -184,17 +184,18 @@ public class Player_Controller : MonoBehaviour
             _playerRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
             _playerControls.Player.Disable();
             _playerControls.GoldenPlayer.Enable();
-            Debug.Log("Switched to golden movement");
             StartCoroutine(NormalMovementTimer());
         }
     }
 
     public IEnumerator NormalMovementTimer()
     {
+        
         yield return new WaitForSeconds(goldenBeanLength);
         canMove = !canMove;
         _playerControls.Player.Enable();
         _playerControls.GoldenPlayer.Disable();
+        _playerRigidBody.velocity = transform.up * goldenHeight;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         _playerRigidBody.constraints = startingConstraints;
 

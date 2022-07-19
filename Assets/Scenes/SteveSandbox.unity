@@ -1569,12 +1569,16 @@ PrefabInstance:
       value: 'Player Rig '
       objectReference: {fileID: 0}
     - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: goldenHeight
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: rotationSpeed
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: goldenBeanLength
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_RootOrder
@@ -2080,11 +2084,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8651707746261732452, guid: e6eaf7fd2cd40470a8228ca6439b5b84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.85
+      value: -2.83
       objectReference: {fileID: 0}
     - target: {fileID: 8651707746261732452, guid: e6eaf7fd2cd40470a8228ca6439b5b84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.82
+      value: 5.56
       objectReference: {fileID: 0}
     - target: {fileID: 8651707746261732452, guid: e6eaf7fd2cd40470a8228ca6439b5b84, type: 3}
       propertyPath: m_LocalPosition.z
