@@ -143,7 +143,6 @@ public class Player_Controller : MonoBehaviour
     {
         playerIsAttacking = false;
         swingCollider.GetComponent<BoxCollider2D>().enabled = false;
-        Debug.Log(playerIsAttacking);
 
     }
 
