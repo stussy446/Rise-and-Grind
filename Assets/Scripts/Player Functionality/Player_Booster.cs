@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player_Booster : MonoBehaviour
 {
@@ -11,12 +12,24 @@ public class Player_Booster : MonoBehaviour
     Vector2 boostVector = new Vector2(0, 1); 
     Player_Controller _playerController;
 
-    int enemiesLayerMask = 9;
+    int beansLayerMask = 8;
+    int goldenBeanLayerMask = 14;
+
+    public UnityEvent GoldenBeanTouched;
+
+
 
     void Start()
     {
+        if (GoldenBeanTouched == null)
+        {
+            GoldenBeanTouched = new UnityEvent();
+        }
+
         _playerRigidBody = GetComponentInParent<Rigidbody2D>();
         _playerController = GetComponentInParent<Player_Controller>();
+
+        
 
     }
 
@@ -28,17 +41,20 @@ public class Player_Booster : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer != enemiesLayerMask)
+        if (collision.gameObject.layer == beansLayerMask)
         {
-
-         boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
-         ProcessBoost(boostValue);
+            boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
+            ProcessBoost(boostValue);
+        }
+        else if (collision.gameObject.layer == goldenBeanLayerMask)
+        {
+            GoldenBeanTouched?.Invoke();
         }
         else
         {
             ProcessAttackBoost(collision.gameObject);
         }
-        
+
     }
 
     /// <summary>
@@ -48,11 +64,14 @@ public class Player_Booster : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer != enemiesLayerMask)
+        if (collision.gameObject.layer == beansLayerMask)
         {
-
             boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
             ProcessBoost(boostValue);
+        }
+        else if(collision.gameObject.layer == goldenBeanLayerMask)
+        {
+            GoldenBeanTouched?.Invoke();
         }
         else
         {
@@ -90,4 +109,6 @@ public class Player_Booster : MonoBehaviour
             _playerRigidBody.velocity = boostVector * enemy.GetComponent<Object_BoostValueHolder>().GetBoostSpeed(); 
         }
     }
+
+   
 }

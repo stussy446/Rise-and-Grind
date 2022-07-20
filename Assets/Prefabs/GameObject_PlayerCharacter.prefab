@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ee70caa8d54be9b74e0d2a5644439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoldenBeanTouched:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2065305738405258778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,9 +257,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 13.5
+  goldenHeight: 25
   fallMultiplier: 5.5
   moveSpeed: 35
+  rotationSpeed: 50
   jumpMoveSpeedDivider: 1.6
+  goldenBeanLength: 1.25
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -273,6 +279,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ee70caa8d54be9b74e0d2a5644439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoldenBeanTouched:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 857953936693192012}
+        m_TargetAssemblyTypeName: Player_Controller, Assembly-CSharp
+        m_MethodName: SwitchToGoldenMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8798066849935724614
 GameObject:
   m_ObjectHideFlags: 0
