@@ -32,6 +32,8 @@ public class Player_Controller : MonoBehaviour
 
     [Header("Hitbox Colliders")]
     [SerializeField] BoxCollider2D swingCollider;
+
+    [SerializeField] SoundManager soundManager;
     
 
     private void Awake()
@@ -114,6 +116,8 @@ public class Player_Controller : MonoBehaviour
         {
 
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            soundManager.Play("Player Jump");
+
 
         }
     }

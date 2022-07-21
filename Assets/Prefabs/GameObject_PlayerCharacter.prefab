@@ -262,7 +262,7 @@ MonoBehaviour:
   moveSpeed: 35
   rotationSpeed: 50
   jumpMoveSpeedDivider: 1.6
-  goldenBeanLength: 1.25
+  goldenBeanLength: 1.5
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 128
