@@ -117,8 +117,6 @@ public class Player_Controller : MonoBehaviour
 
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             soundManager.Play("PlayerJump");
-
-
         }
     }
 

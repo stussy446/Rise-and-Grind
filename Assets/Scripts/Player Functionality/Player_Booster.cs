@@ -87,7 +87,7 @@ public class Player_Booster : MonoBehaviour
     /// <param name="collisonBoost"></param>
     private void ProcessBoost(Object_BoostValueHolder collisonBoost)
     {
-        if (collisonBoost)
+        if (collisonBoost != null)
         {
             _playerRigidBody.velocity = boostVector * collisonBoost.GetBoostSpeed();
 
@@ -104,7 +104,7 @@ public class Player_Booster : MonoBehaviour
     private void ProcessAttackBoost(GameObject enemy)
     {
         
-        if (_playerController.GetPlayerIsAttacking() && enemy)
+        if (_playerController.GetPlayerIsAttacking() && enemy != null)
         {
             _playerRigidBody.velocity = boostVector * enemy.GetComponent<Object_BoostValueHolder>().GetBoostSpeed(); 
         }

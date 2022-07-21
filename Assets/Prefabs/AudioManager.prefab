@@ -45,8 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Player Jump
+  - name: PlayerJump
     clip: {fileID: 8300000, guid: 01571c058804b9948ac236a0bf5dde80, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: fe64800ec50dea74a801f0b8ee15e621, type: 3}
+    volume: 0.692
+    pitch: 1
+    loop: 1
     audioSource: {fileID: 0}
