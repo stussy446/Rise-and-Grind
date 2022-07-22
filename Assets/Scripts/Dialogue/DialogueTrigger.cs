@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Make an array for each message and its associated actor/speaker
     {
-        
+    public Message[] messages;
+    public Actor[] actors;
+    public void StartDialogue()
+    {
+        FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
     }
-
-    // Update is called once per frame
-    void Update()
+    }
+    //Adding input fields for the messages and associated actorID
+    [System.Serializable]
+    public class Message
     {
-        
+        public int actorID;
+        public string message;
+    }
+    //Adding input fields for actor names and associated actorID
+    [System.Serializable]
+    public class Actor
+    {
+        public string name;
+        public Sprite sprite;
     }
 }
