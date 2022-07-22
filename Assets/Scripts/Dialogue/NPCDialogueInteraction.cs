@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPCDialogueInteraction : MonoBehaviour
 {
+    /*
     public DialogueTrigger trigger;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -11,4 +12,5 @@ public class NPCDialogueInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
             trigger.StartDialogue();
     }
+    */
 }

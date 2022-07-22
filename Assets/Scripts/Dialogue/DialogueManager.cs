@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /* Start is called before the first frame update
     public Text actorName;
     public Text messageText;
     public RectTransform backgroundBox;
@@ -54,4 +54,6 @@ public class DialogueManager : MonoBehaviour
             NextMessage();
         }
     }
+    */
 }
+    

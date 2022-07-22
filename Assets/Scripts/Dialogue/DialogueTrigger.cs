@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    // Make an array for each message and its associated actor/speaker
+    /* Make an array for each message and its associated actor/speaker
     {
     public Message[] messages;
     public Actor[] actors;
@@ -27,4 +27,5 @@ public class DialogueTrigger : MonoBehaviour
         public string name;
         public Sprite sprite;
     }
+    */
 }
