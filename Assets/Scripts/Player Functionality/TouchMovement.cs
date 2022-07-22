@@ -20,11 +20,9 @@ public class TouchMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.touchCount);
         int i = 0;
         while(i < Input.touchCount)
         {
-            Debug.Log(Input.GetTouch(i).position.x);
             if (Input.GetTouch(i).position.x > screenWidth / 2)
             {
                 RunCharacter(1.0f);
