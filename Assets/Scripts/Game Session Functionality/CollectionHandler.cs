@@ -26,7 +26,6 @@ public class CollectionHandler : MonoBehaviour
     {
         // do animation
         // play sound
-        Debug.Log("collection handled");
         gameObject.SetActive(false);
         uiManager.UpdateScore(pointValue);
     }

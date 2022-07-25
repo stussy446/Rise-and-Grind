@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifeSystem : MonoBehaviour
+public class LifeSystem : MonoBehaviour, ILifeSystem
 {
     [Tooltip("amount of hp object has")][SerializeField] float healthPoints = 2f;
     [Tooltip("holds reference to ground layer")][SerializeField] LayerMask groundLayer;
@@ -41,20 +41,20 @@ public class LifeSystem : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         animator.SetTrigger("Die");
         StartCoroutine(DeathSequence());
     }
 
-    private void TakeDamage()
+    public void TakeDamage()
     {
         healthPoints -= 1f;
         animator.SetTrigger("TakeHit");
     }
 
 
-    IEnumerator DeathSequence()
+    public IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathLength);
         Destroy(gameObject);
