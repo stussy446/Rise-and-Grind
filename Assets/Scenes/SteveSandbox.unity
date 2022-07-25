@@ -1724,10 +1724,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 792819003}
     m_Modifications:
-    - target: {fileID: 1433589959526320067, guid: 01a76e761a55549a1993c506272c8b59, type: 3}
-      propertyPath: m_text
-      value: = 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2330510412726677776, guid: 01a76e761a55549a1993c506272c8b59, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1815,10 +1811,6 @@ PrefabInstance:
     - target: {fileID: 2330510412726677780, guid: 01a76e761a55549a1993c506272c8b59, type: 3}
       propertyPath: m_Name
       value: GameSessionUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3444987285279494310, guid: 01a76e761a55549a1993c506272c8b59, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -7.071686
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01a76e761a55549a1993c506272c8b59, type: 3}
@@ -2137,10 +2129,6 @@ PrefabInstance:
     - target: {fileID: 7158957974452838003, guid: e767506b0a61e490fb2277dd630d0c1a, type: 3}
       propertyPath: m_Name
       value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7158957974452838004, guid: e767506b0a61e490fb2277dd630d0c1a, type: 3}
-      propertyPath: sounds.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7158957974452838005, guid: e767506b0a61e490fb2277dd630d0c1a, type: 3}
       propertyPath: m_RootOrder

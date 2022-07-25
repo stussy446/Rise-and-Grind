@@ -174,7 +174,10 @@ public class Player_Controller : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-
+    /// <summary>
+    /// switches control over to the golden movement for a few seconds when the player
+    /// successfully reaches a golden bean 
+    /// </summary>
     public void SwitchToGoldenMovement()
     {
         if (canMove)
@@ -182,7 +185,6 @@ public class Player_Controller : MonoBehaviour
             startingConstraints = _playerRigidBody.constraints;
             canMove = !canMove;
 
-            // ENABLE NEW CONTROL
             _playerRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
             _playerControls.Player.Disable();
             _playerControls.GoldenPlayer.Enable();
@@ -190,6 +192,11 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// handles amount of time player stays in golden movement and resets
+    /// player back to normal movement when time runs out 
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator NormalMovementTimer()
     {
         
@@ -204,7 +211,10 @@ public class Player_Controller : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// handles rotation of the player during golden movement, rotation is only
+    /// possible for the player while golden player movement is active 
+    /// </summary>
     void RotatePlayer()
     {
         if (_playerControls.GoldenPlayer.enabled)
