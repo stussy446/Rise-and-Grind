@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Gate
   - Boss
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Boss
   - 
   - Golden Bean
-  - 
+  - Collectible
   - 
   - 
   - 
