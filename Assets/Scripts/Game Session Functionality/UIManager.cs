@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     [SerializeField] TMP_Text scoreText;
+    TMP_Text lifeText;
     int score = 0;
 
     private void Awake()
@@ -25,10 +26,20 @@ public class UIManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+       lifeText = GameObject.Find("Life Text").GetComponent<TMP_Text>();
+    }
+
 
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "= " + score;
+    }
+
+    public void UpdatePlayerHealth(float healthRemaining)
+    {
+        lifeText.text = "= " + healthRemaining;
     }
 }

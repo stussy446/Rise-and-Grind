@@ -34,6 +34,7 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     public void TakeDamage()
     {
         healthPoints -= 1f;
+        uiManager.UpdatePlayerHealth(healthPoints);
         Debug.Log("health left : " + healthPoints);
     }
 

@@ -312,6 +312,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  deathLength: 1
 --- !u!1 &8798066849935724614
 GameObject:
   m_ObjectHideFlags: 0
