@@ -60,8 +60,9 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         // set up animation stuff
         // play death sound 
         uiManager.UpdatePlayerHealth(healthPoints);
-        Debug.Log("NOOOOOOO I DIED!");
         StartCoroutine(DeathSequence());
+        gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
     }
 
     /// <summary>
@@ -73,7 +74,9 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     {
         yield return new WaitForSeconds(deathLength);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        healthPoints = 3f;
         SceneManager.LoadScene(currentSceneIndex);
+        uiManager.UpdatePlayerHealth(healthPoints);
     }
 
 }

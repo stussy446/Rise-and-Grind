@@ -37,7 +37,6 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
     {
         // set up animation stuff
         // play death sound 
-        Debug.Log("enemy died");
         StartCoroutine(DeathSequence());
     }
 
