@@ -14,6 +14,7 @@ public class Player_Controller : MonoBehaviour
     bool playerIsAttacking = false;
     bool canMove = true;
     RigidbodyConstraints2D startingConstraints;
+    SoundManager soundManager;
 
 
     [Header("Move Speed and Jump Height")]
@@ -30,16 +31,13 @@ public class Player_Controller : MonoBehaviour
     [Header("Layer Masks")]
     [SerializeField] LayerMask platformLayerMask;  
 
-    [Header("Hitbox Colliders")]
-    [SerializeField] BoxCollider2D swingCollider;
-
-    [SerializeField] SoundManager soundManager;
     
 
     private void Awake()
     {
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
+        soundManager = FindObjectOfType<SoundManager>();
 
     }
 
@@ -142,7 +140,6 @@ public class Player_Controller : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         playerIsAttacking = true;
-        swingCollider.GetComponent<BoxCollider2D>().enabled = true;
 
     }
 
@@ -155,7 +152,6 @@ public class Player_Controller : MonoBehaviour
     private void StopAttack(InputAction.CallbackContext obj)
     {
         playerIsAttacking = false;
-        swingCollider.GetComponent<BoxCollider2D>().enabled = false;
 
     }
 
