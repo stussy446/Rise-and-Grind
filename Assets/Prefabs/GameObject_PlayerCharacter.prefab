@@ -297,8 +297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectiles:
-  - {fileID: 0}
-  shotSpeed: 1
+  - {fileID: 2632744867222877430, guid: 46a967e25bfa74a16b6e96bfc70bbc0a, type: 3}
+  xShotSpeed: 500
+  yShotSpeed: 50
 --- !u!1 &8798066849935724614
 GameObject:
   m_ObjectHideFlags: 0
