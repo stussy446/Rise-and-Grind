@@ -52,7 +52,7 @@ public class Player_Booster : MonoBehaviour
         }
         else
         {
-            ProcessAttackBoost(collision.gameObject);
+            return;
         }
 
     }
@@ -75,7 +75,7 @@ public class Player_Booster : MonoBehaviour
         }
         else
         {
-            ProcessAttackBoost(collision.gameObject);
+            return;
         }
     }
 
@@ -94,21 +94,5 @@ public class Player_Booster : MonoBehaviour
         }
 
     }
-
-
-    /// <summary>
-    /// Takes in an enemy gameObject and applies a boost to the enemy as long as
-    /// the player is attacking, otherwise it does nothing
-    /// </summary>
-    /// <param name="enemy"></param>
-    private void ProcessAttackBoost(GameObject enemy)
-    {
-        
-        if (_playerController.GetPlayerIsAttacking() && enemy != null)
-        {
-            _playerRigidBody.velocity = boostVector * enemy.GetComponent<Object_BoostValueHolder>().GetBoostSpeed(); 
-        }
-    }
-
-   
+    
 }

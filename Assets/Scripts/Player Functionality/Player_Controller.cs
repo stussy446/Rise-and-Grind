@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -29,8 +30,10 @@ public class Player_Controller : MonoBehaviour
 
 
     [Header("Layer Masks")]
-    [SerializeField] LayerMask platformLayerMask;  
+    [SerializeField] LayerMask platformLayerMask;
 
+
+    [SerializeField] UnityEvent onAttack;
     
 
     private void Awake()
@@ -140,6 +143,7 @@ public class Player_Controller : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         playerIsAttacking = true;
+        onAttack?.Invoke();
 
     }
 
