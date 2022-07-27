@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [SerializeField] TMP_Text scoreText;
     TMP_Text lifeText;
+    TMP_Text scoreText;
     int score = 0;
 
     /// <summary>
@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
        lifeText = GameObject.Find("Life Text").GetComponent<TMP_Text>();
+       scoreText = GameObject.Find("Score Text").GetComponent<TMP_Text>();
+
     }
 
 

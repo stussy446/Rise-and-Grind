@@ -12,6 +12,7 @@ TagManager:
   - Gate
   - Boss
   - Collectible
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - 
   - Golden Bean
   - Collectible
-  - 
+  - Projectile
   - 
   - 
   - 
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: Bean
     uniqueID: 3094355711
+    locked: 0
+  - name: Projectile
+    uniqueID: 320490565
     locked: 0
   - name: Enemy
     uniqueID: 743623333
