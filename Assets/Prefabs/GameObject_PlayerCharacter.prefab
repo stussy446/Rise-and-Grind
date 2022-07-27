@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles:
   - {fileID: 2632744867222877430, guid: 46a967e25bfa74a16b6e96bfc70bbc0a, type: 3}
+  - {fileID: 7721623880696952200, guid: 0db18aa2fd0d445c38456dec159b61be, type: 3}
   xShotSpeed: 500
   yShotSpeed: 50
 --- !u!1 &8798066849935724614
