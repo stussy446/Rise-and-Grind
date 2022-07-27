@@ -24,7 +24,7 @@ public class Boss_Move : StateMachineBehaviour
         bossRigidBody = animator.GetComponent<Rigidbody2D>();
         bossTransform = GameObject.FindGameObjectWithTag("Boss").transform;
         bossSprite = GameObject.FindGameObjectWithTag("Boss").GetComponent<SpriteRenderer>();
-        mb = GameObject.FindObjectOfType<MonoBehaviour>();
+        mb = player.GetComponent<MonoBehaviour>();
     }
 
 
