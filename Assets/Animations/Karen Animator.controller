@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   attackRange: 5
-  flipDelay: 3
+  flipDelay: 2.5
 --- !u!1102 &1732982939677511535
 AnimatorState:
   serializedVersion: 6
