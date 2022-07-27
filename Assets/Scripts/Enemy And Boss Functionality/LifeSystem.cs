@@ -30,7 +30,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     {
         if (collision.gameObject.layer == groundLayer) { return; }
 
-        if (damageTakingCollider.IsTouchingLayers(LayerMask.GetMask("Player")))
+        if (damageTakingCollider.IsTouchingLayers(LayerMask.GetMask("Projectile")))
         {
             TakeDamage();
         }
