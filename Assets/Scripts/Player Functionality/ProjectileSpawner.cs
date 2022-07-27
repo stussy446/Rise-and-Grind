@@ -17,6 +17,11 @@ public class ProjectileSpawner : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// called when the fire button is pressed (See Player Controller Script)
+    /// chooses random projectile object and shoots it based on the direction
+    /// that the player is currently facing
+    /// </summary>
     public void FireProjectile()
     {
         int projectileToSpawn = Random.Range(0, projectiles.Length);
