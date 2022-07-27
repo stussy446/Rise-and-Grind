@@ -44,6 +44,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     public void Die()
     {
         animator.SetTrigger("Die");
+        GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(DeathSequence());
     }
 
