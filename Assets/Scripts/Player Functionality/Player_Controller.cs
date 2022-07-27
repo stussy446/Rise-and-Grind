@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player_Controller : MonoBehaviour
     bool playerIsAttacking = false;
     bool canMove = true;
     RigidbodyConstraints2D startingConstraints;
+    SoundManager soundManager;
 
 
     [Header("Move Speed and Jump Height")]
@@ -28,16 +30,17 @@ public class Player_Controller : MonoBehaviour
 
 
     [Header("Layer Masks")]
-    [SerializeField] LayerMask platformLayerMask;  
+    [SerializeField] LayerMask platformLayerMask;
 
-    [Header("Hitbox Colliders")]
-    [SerializeField] BoxCollider2D swingCollider;
+
+    [SerializeField] UnityEvent onAttack;
     
 
     private void Awake()
     {
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
+        soundManager = FindObjectOfType<SoundManager>();
 
     }
 
@@ -114,7 +117,7 @@ public class Player_Controller : MonoBehaviour
         {
 
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-
+            soundManager.Play("PlayerJump");
         }
     }
 
@@ -140,7 +143,7 @@ public class Player_Controller : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         playerIsAttacking = true;
-        swingCollider.GetComponent<BoxCollider2D>().enabled = true;
+        onAttack?.Invoke();
 
     }
 
@@ -153,7 +156,6 @@ public class Player_Controller : MonoBehaviour
     private void StopAttack(InputAction.CallbackContext obj)
     {
         playerIsAttacking = false;
-        swingCollider.GetComponent<BoxCollider2D>().enabled = false;
 
     }
 
@@ -172,7 +174,10 @@ public class Player_Controller : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-
+    /// <summary>
+    /// switches control over to the golden movement for a few seconds when the player
+    /// successfully reaches a golden bean 
+    /// </summary>
     public void SwitchToGoldenMovement()
     {
         if (canMove)
@@ -180,7 +185,6 @@ public class Player_Controller : MonoBehaviour
             startingConstraints = _playerRigidBody.constraints;
             canMove = !canMove;
 
-            // ENABLE NEW CONTROL
             _playerRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
             _playerControls.Player.Disable();
             _playerControls.GoldenPlayer.Enable();
@@ -188,6 +192,11 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// handles amount of time player stays in golden movement and resets
+    /// player back to normal movement when time runs out 
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator NormalMovementTimer()
     {
         
@@ -202,7 +211,10 @@ public class Player_Controller : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// handles rotation of the player during golden movement, rotation is only
+    /// possible for the player while golden player movement is active 
+    /// </summary>
     void RotatePlayer()
     {
         if (_playerControls.GoldenPlayer.enabled)
