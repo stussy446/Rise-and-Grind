@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SteveSandbox.unity
-    guid: 2ef44a13cf202bb40a5ad23e647d744c
+    path: Assets/Scenes/AlphaBuildScene.unity
+    guid: 75c9f7670a8554678855dced20c30eb1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 958b86c64b8e64f26bd84e09d71879ae, type: 2}

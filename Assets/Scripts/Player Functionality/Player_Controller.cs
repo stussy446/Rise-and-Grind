@@ -75,6 +75,7 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        FlipPlayer();
         RotatePlayer();
         HandleFall();
     }
@@ -102,6 +103,16 @@ public class Player_Controller : MonoBehaviour
         {
            _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
 
+        }
+    }
+
+
+    void FlipPlayer()
+    {
+        bool playerHasHorizontalSpeed = Mathf.Abs(_playerRigidBody.velocity.x) > Mathf.Epsilon;
+        if (playerHasHorizontalSpeed)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(_playerRigidBody.velocity.x), 1f);
         }
     }
 

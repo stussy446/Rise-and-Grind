@@ -298,7 +298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles:
   - {fileID: 2632744867222877430, guid: 46a967e25bfa74a16b6e96bfc70bbc0a, type: 3}
-  xShotSpeed: 500
+  - {fileID: 7721623880696952200, guid: 0db18aa2fd0d445c38456dec159b61be, type: 3}
+  xShotSpeed: 600
   yShotSpeed: 50
 --- !u!1 &8798066849935724614
 GameObject:
@@ -374,7 +375,7 @@ SpriteRenderer:
   m_SortingLayerID: 1277996091
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1067822211, guid: efafb47e865f74fd9959e3d3f79f1578, type: 3}
+  m_Sprite: {fileID: -924748485, guid: ec6b086bada1d44e5b53d27942809ee3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - Collectible
   - Projectile
+  - Background
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Golden Bean
   - Collectible
   - Projectile
-  - 
+  - Background
   - 
   - 
   - 

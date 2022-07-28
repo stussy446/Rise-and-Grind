@@ -30,7 +30,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     {
         if (collision.gameObject.layer == groundLayer) { return; }
 
-        if (damageTakingCollider.IsTouchingLayers(LayerMask.GetMask("Player")))
+        if (damageTakingCollider.IsTouchingLayers(LayerMask.GetMask("Projectile")))
         {
             TakeDamage();
         }
@@ -44,6 +44,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     public void Die()
     {
         animator.SetTrigger("Die");
+        GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(DeathSequence());
     }
 
