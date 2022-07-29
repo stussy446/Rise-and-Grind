@@ -161,6 +161,7 @@ public class Player_Controller : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         playerIsAttacking = true;
+        playerAnimator.SetBool("isThrowing", true);
         onAttack?.Invoke();
 
     }
@@ -174,10 +175,12 @@ public class Player_Controller : MonoBehaviour
     private void StopAttack(InputAction.CallbackContext obj)
     {
         playerIsAttacking = false;
+        playerAnimator.SetBool("isThrowing", false);
+
 
     }
 
-   
+
     /// <summary>
     /// Called in Jump, utilizes raycast and layermasking to check if the player
     /// is touching a layer that they can jump on.
