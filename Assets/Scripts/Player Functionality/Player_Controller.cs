@@ -16,6 +16,7 @@ public class Player_Controller : MonoBehaviour
     bool canMove = true;
     RigidbodyConstraints2D startingConstraints;
     SoundManager soundManager;
+    Animator playerAnimator;
 
 
     [Header("Move Speed and Jump Height")]
@@ -41,6 +42,7 @@ public class Player_Controller : MonoBehaviour
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
         soundManager = FindObjectOfType<SoundManager>();
+        playerAnimator = GetComponentInChildren<Animator>();
 
     }
 
@@ -94,6 +96,11 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        if (_moveInputXValue != 0 && IsGrounded()) { playerAnimator.SetBool("isMoving", true); }
+        else { playerAnimator.SetBool("isMoving", false); }
+        
+
+        
         Vector2 processedMoveVector = new Vector2(_moveInputXValue, 0) * moveSpeed;
         if (!IsGrounded())
         {
