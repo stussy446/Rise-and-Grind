@@ -44,7 +44,7 @@ public class Player_Controller : MonoBehaviour
 
     }
 
-
+   
     // getter for playerIsAttacking, used in Player_Booster to determine if the
     // player will be boosted by an enemy attack or not 
     public bool GetPlayerIsAttacking() { return playerIsAttacking; }

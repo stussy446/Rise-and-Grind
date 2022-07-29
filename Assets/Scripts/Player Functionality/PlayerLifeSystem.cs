@@ -8,6 +8,8 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     [Tooltip("amount of hp object has")][SerializeField] float healthPoints = 3f;
     [Tooltip("holds reference to ground layer")][SerializeField] LayerMask groundLayer;
     [SerializeField] float deathLength = 1f;
+    Vector2 currentCheckpointPos;
+    Transform playerTransform;
 
     UIManager uiManager;
     SoundManager soundManager;
@@ -16,6 +18,18 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     {
         uiManager = FindObjectOfType<UIManager>();
         soundManager = FindObjectOfType<SoundManager>();
+        playerTransform = GetComponent<Transform>();
+        currentCheckpointPos = FindObjectOfType<CheckPointHandler>().SpawnPoint;
+        if (currentCheckpointPos != new Vector2(0,0))
+        {
+            gameObject.transform.position = currentCheckpointPos;
+        }
+    }
+
+    public Vector2 CurrentCheckpointPos
+    {
+        get => currentCheckpointPos;
+        set => currentCheckpointPos = value;
     }
 
 
