@@ -187,13 +187,13 @@ MonoBehaviour:
   acceleration: 8
   deccelaration: 24
   velPower: 0.9
-  frictionAmount: 2.5
+  frictionAmount: 3
   jumpHeight: 18
   goldenHeight: 25
-  fallMultiplier: 5.5
+  fallMultiplier: 8
   rotationSpeed: 50
   jumpCutMultiplier: 0.5
-  jumpMoveSpeedDivider: 1.2
+  jumpMoveSpeedDivider: 1.4
   goldenBeanLength: 1.5
   platformLayerMask:
     serializedVersion: 2

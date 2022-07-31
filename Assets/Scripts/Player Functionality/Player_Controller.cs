@@ -149,11 +149,24 @@ public class Player_Controller : MonoBehaviour
 
     void FlipPlayer()
     {
-        bool playerHasHorizontalSpeed = Mathf.Abs(_playerRigidBody.velocity.x) > Mathf.Epsilon;
-        if (playerHasHorizontalSpeed)
+        if (_moveInputXValue < 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(_playerRigidBody.velocity.x), 1f);
+             transform.localScale = new Vector2(-1f, 1f);
+
         }
+        else if (_moveInputXValue > 0)
+        {
+            transform.localScale = new Vector2(1f, 1f);
+        }
+        else
+        {
+            return;
+        }
+        //bool playerHasHorizontalSpeed = Mathf.Abs(_playerRigidBody.velocity.x) > Mathf.Epsilon;
+        //if (playerHasHorizontalSpeed)
+        //{
+        //    transform.localScale = new Vector2(Mathf.Sign(_playerRigidBody.velocity.x), 1f);
+        //}
     }
 
 
