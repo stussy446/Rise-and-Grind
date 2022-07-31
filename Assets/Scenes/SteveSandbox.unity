@@ -2444,6 +2444,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Player Rig '
       objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: velPower
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: moveSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: acceleration
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: deccelaration
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: frictionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: jumpCutMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: jumpMoveSpeedDivider
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_RootOrder
       value: 1

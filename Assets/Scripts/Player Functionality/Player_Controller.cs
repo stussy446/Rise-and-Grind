@@ -12,19 +12,31 @@ public class Player_Controller : MonoBehaviour
     PlayerControls _playerControls;
     float _moveInputXValue;
     float _rotateInputValue;
+
     bool playerIsAttacking = false;
     bool canMove = true;
+    bool beanTouched = false;
     RigidbodyConstraints2D startingConstraints;
     SoundManager soundManager;
     Animator playerAnimator;
 
 
-    [Header("Move Speed and Jump Height")]
+    [Header("Movement")]
+    [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
+    [SerializeField] float acceleration = 1f;
+    [SerializeField] float deccelaration = 1f;
+    [SerializeField] float velPower = 1f;
+
+    [Header("Friction")]
+    [SerializeField] float frictionAmount = 1f;
+
+
+    [Header("Jumping")]
     [Tooltip("adjusts height of jump")][SerializeField] float jumpHeight = 1f;
     [Tooltip("adjusts height of golden bean boost")][SerializeField] float goldenHeight = 5f;
     [Tooltip("adjusts fall speed of jump")][SerializeField] float fallMultiplier = 2.5f;
-    [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
     [Tooltip("adjusts speed of rotation")][SerializeField] float rotationSpeed = 1f;
+    [SerializeField] float jumpCutMultiplier = 1f;
 
     [Tooltip("adjusts speed of movement in the air")][SerializeField] float jumpMoveSpeedDivider = 2f;
     [Tooltip("adjusts length golden mode exists")][SerializeField]  float goldenBeanLength = 5f;
@@ -50,6 +62,12 @@ public class Player_Controller : MonoBehaviour
     // getter for playerIsAttacking, used in Player_Booster to determine if the
     // player will be boosted by an enemy attack or not 
     public bool GetPlayerIsAttacking() { return playerIsAttacking; }
+    public bool BeanTouched
+    {
+        get => beanTouched;
+        set => beanTouched = value;
+    }
+
 
 
     private void OnEnable()
@@ -59,6 +77,7 @@ public class Player_Controller : MonoBehaviour
         _playerControls.GoldenPlayer.Disable();
 
         _playerControls.Player.Jump.performed += Jump;
+        _playerControls.Player.Jump.canceled += JumpCut;
         _playerControls.Player.Fire.performed += Attack;
         _playerControls.Player.Fire.canceled += StopAttack;
 
@@ -98,19 +117,33 @@ public class Player_Controller : MonoBehaviour
     {
         if (_moveInputXValue != 0 && IsGrounded()) { playerAnimator.SetBool("isMoving", true); }
         else { playerAnimator.SetBool("isMoving", false); }
-        
 
+        float targetSpeed = _moveInputXValue * moveSpeed;
+        float speedDif = targetSpeed - _playerRigidBody.velocity.x;
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deccelaration;
+
+        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
         
         Vector2 processedMoveVector = new Vector2(_moveInputXValue, 0) * moveSpeed;
         if (!IsGrounded())
         {
-            _playerRigidBody.AddForce((processedMoveVector / jumpMoveSpeedDivider) * Time.deltaTime, ForceMode2D.Impulse);
+            _playerRigidBody.AddForce(movement / jumpMoveSpeedDivider * Vector2.right * Time.deltaTime);
+            //_playerRigidBody.AddForce((processedMoveVector / jumpMoveSpeedDivider) * Time.deltaTime, ForceMode2D.Impulse);
         }
         else
         {
-           _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
+            _playerRigidBody.AddForce(movement * Vector2.right * Time.deltaTime);
+            // _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
+            if (Mathf.Abs(_moveInputXValue) < 0.01f)
+            {
+                float amount = Mathf.Min(Mathf.Abs(_playerRigidBody.velocity.x), Mathf.Abs(frictionAmount));
+                amount *= Mathf.Sign(_playerRigidBody.velocity.x);
+                _playerRigidBody.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
+            }
 
         }
+
+
     }
 
 
@@ -136,6 +169,16 @@ public class Player_Controller : MonoBehaviour
 
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             soundManager.Play("PlayerJump");
+        }
+    }
+
+
+    private void JumpCut(InputAction.CallbackContext context)
+    {
+        if (_playerRigidBody.velocity.y > 0 && beanTouched == false)
+        {
+
+            _playerRigidBody.AddForce(Vector2.down * _playerRigidBody.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
         }
     }
 
