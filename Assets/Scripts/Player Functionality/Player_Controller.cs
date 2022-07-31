@@ -23,12 +23,12 @@ public class Player_Controller : MonoBehaviour
 
     [Header("Movement")]
     [Tooltip("adjusts speed of movement")][SerializeField] float moveSpeed = 1f;
-    [SerializeField] float acceleration = 1f;
-    [SerializeField] float deccelaration = 1f;
-    [SerializeField] float velPower = 1f;
+    [Tooltip("adjusts acceleration speed")][SerializeField] float acceleration = 1f;
+    [Tooltip("adjusts decelleration speed")][SerializeField] float deccelaration = 1f;
+    [Tooltip("adjusts how quickly velocity is applied")][SerializeField] float velPower = 1f;
 
     [Header("Friction")]
-    [SerializeField] float frictionAmount = 1f;
+    [Tooltip("adjust how much player slides at end of movement")][SerializeField] float frictionAmount = 1f;
 
 
     [Header("Jumping")]
@@ -36,7 +36,7 @@ public class Player_Controller : MonoBehaviour
     [Tooltip("adjusts height of golden bean boost")][SerializeField] float goldenHeight = 5f;
     [Tooltip("adjusts fall speed of jump")][SerializeField] float fallMultiplier = 2.5f;
     [Tooltip("adjusts speed of rotation")][SerializeField] float rotationSpeed = 1f;
-    [SerializeField] float jumpCutMultiplier = 1f;
+    [Tooltip("adjusts how much shorter the jump is on tap vs hold")][SerializeField] float jumpCutMultiplier = 1f;
 
     [Tooltip("adjusts speed of movement in the air")][SerializeField] float jumpMoveSpeedDivider = 2f;
     [Tooltip("adjusts length golden mode exists")][SerializeField]  float goldenBeanLength = 5f;
