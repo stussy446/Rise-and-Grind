@@ -183,12 +183,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d2d75faf3054fd188098f123e3bf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 13.5
+  moveSpeed: 700
+  acceleration: 8
+  deccelaration: 24
+  velPower: 0.9
+  frictionAmount: 2.5
+  jumpHeight: 18
   goldenHeight: 25
   fallMultiplier: 5.5
-  moveSpeed: 35
   rotationSpeed: 50
-  jumpMoveSpeedDivider: 1.6
+  jumpCutMultiplier: 0.5
+  jumpMoveSpeedDivider: 1.2
   goldenBeanLength: 1.5
   platformLayerMask:
     serializedVersion: 2
@@ -220,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213ee70caa8d54be9b74e0d2a5644439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToWait: 1
   GoldenBeanTouched:
     m_PersistentCalls:
       m_Calls:
