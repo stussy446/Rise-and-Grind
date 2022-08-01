@@ -15,6 +15,7 @@ TagManager:
   - Projectile
   - Background
   - Checkpoint
+  - Level Exit
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - Projectile
   - Background
   - Checkpoint
-  - 
+  - Level Exit
   - 
   - 
   - 
