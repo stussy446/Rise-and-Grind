@@ -27,16 +27,17 @@ public class ProjectileSpawner : MonoBehaviour
         int projectileToSpawn = Random.Range(0, projectiles.Length);
         GameObject projectile = Instantiate(projectiles[projectileToSpawn], transform.position, transform.rotation);
 
-        if (player.transform.localScale.x == -1)
-        {
-            shotForce = new Vector3(-xShotSpeed, yShotSpeed, 0);
-            
-        }
-        else
-        {
-            shotForce = new Vector3(xShotSpeed, yShotSpeed, 0);
-            
-        }
+        //if (player.transform.localScale.x == -1)
+        //{
+        //    shotForce = new Vector3(-xShotSpeed, yShotSpeed, 0);
+
+        //}
+        //else
+        //{
+        //    shotForce = new Vector3(xShotSpeed, yShotSpeed, 0);
+
+        //}
+        shotForce = new Vector3(xShotSpeed, yShotSpeed, 0);
 
         projectile.GetComponent<Rigidbody2D>().AddRelativeForce(shotForce);
 

@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ShootingRotator : MonoBehaviour
+{
+
+    private Camera mainCam;
+    private Vector3 mousePos;
+    [SerializeField] Transform playerTransform;
+    [SerializeField] GameObject crossHairs;
+    [SerializeField] float speed = 1f;
+
+    [SerializeField] float maximumRotation = 36f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Cursor.visible = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Rotate();
+    }
+
+    void Rotate()
+    {
+
+        mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+        crossHairs.transform.position = new Vector2(mousePos.x, mousePos.y);
+
+        Vector3 difference = mousePos - transform.position;
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+
+    }
+}
