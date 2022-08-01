@@ -9,7 +9,6 @@ public class CheckPointHandler : MonoBehaviour
     GameManager gameManager;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         playerLifeSystem = FindObjectOfType<PlayerLifeSystem>();
@@ -17,11 +16,17 @@ public class CheckPointHandler : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// when the checkpoint is reached, it sets the spawnpoint in the game manager
+    /// to the position of this checkpoint and then destorys the checkpoint
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         gameManager.SpawnPoint = GetComponent<Transform>().position;
         DisableCheckpoint();
     }
+
 
     public void DisableCheckpoint()
     {

@@ -32,7 +32,6 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         }
         else
         {
-          Debug.Log("in other checkpoints");
           playerTransform.position = gameManager.SetPlayerSpawnPoint();
         }
        

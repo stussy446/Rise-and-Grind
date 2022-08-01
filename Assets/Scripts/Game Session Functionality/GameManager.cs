@@ -46,7 +46,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// loads next level in the game, if there is no next level, resets to first level 
+    /// </summary>
     public void LoadNextLevel()
     {
       
