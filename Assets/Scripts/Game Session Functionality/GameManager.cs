@@ -8,8 +8,21 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    public UnityEvent OnNextLevelLoad;
-    public bool isLoadingLevel = false;
+    Vector2 currentPlayerSpawnPoint;
+    int numberOfSpawns = 0;
+    GameObject startingCheckpoint;
+
+    public Vector2 SpawnPoint
+    {
+        get => currentPlayerSpawnPoint;
+        set => currentPlayerSpawnPoint = value;
+    }
+
+    public int NumberOfSpawns
+    {
+        get => numberOfSpawns;
+        set => numberOfSpawns = value;
+    }
 
     private void Awake()
     {
@@ -26,23 +39,20 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        if (OnNextLevelLoad == null)
-        {
-            OnNextLevelLoad = new UnityEvent();
-        }
 
+    public Vector2 SetPlayerSpawnPoint()
+    {
+        return currentPlayerSpawnPoint;
     }
 
 
 
     public void LoadNextLevel()
     {
-        OnNextLevelLoad?.Invoke();
-        isLoadingLevel = true;
+      
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         currentSceneIndex++;
+        
 
         if (currentSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
@@ -53,7 +63,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(currentSceneIndex);
         }
+
+        numberOfSpawns = 0;
+
     }
 
-   
+
 }

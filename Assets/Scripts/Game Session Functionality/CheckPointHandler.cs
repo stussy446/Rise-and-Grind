@@ -8,6 +8,7 @@ public class CheckPointHandler : MonoBehaviour
     Vector2 spawnPoint;
     GameManager gameManager;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,26 +16,16 @@ public class CheckPointHandler : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    public Vector2 SpawnPoint
-    {
-        get => spawnPoint;
-        set => spawnPoint = value;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        spawnPoint = GetComponent<Transform>().position;
-
-        if (playerLifeSystem.CurrentCheckpointPos != spawnPoint)
-        {
-            playerLifeSystem.CurrentCheckpointPos = spawnPoint;
-
-        }
+        gameManager.SpawnPoint = GetComponent<Transform>().position;
+        DisableCheckpoint();
     }
 
-    public void ResetPlayerSpawnPoint()
+    public void DisableCheckpoint()
     {
-        playerLifeSystem.CurrentCheckpointPos = new Vector2(0,0);
+        Destroy(gameObject);
     }
+
 }

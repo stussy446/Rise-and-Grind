@@ -16,6 +16,7 @@ TagManager:
   - Background
   - Checkpoint
   - Level Exit
+  - Starting Checkpoint
   layers:
   - Default
   - TransparentFX
