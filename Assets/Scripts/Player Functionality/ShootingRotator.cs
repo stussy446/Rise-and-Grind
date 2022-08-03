@@ -9,9 +9,6 @@ public class ShootingRotator : MonoBehaviour
     private Vector3 mousePos;
     [SerializeField] Transform playerTransform;
     [SerializeField] GameObject crossHairs;
-    [SerializeField] float speed = 1f;
-
-    [SerializeField] float maximumRotation = 36f;
 
     // Start is called before the first frame update
     void Start()
