@@ -5,29 +5,32 @@ using UnityEngine;
 public class CheckPointHandler : MonoBehaviour
 {
     PlayerLifeSystem playerLifeSystem;
-    Vector2 spawnPoint; 
+    Vector2 spawnPoint;
+    GameManager gameManager;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         playerLifeSystem = FindObjectOfType<PlayerLifeSystem>();
-    }
-
-    public Vector2 SpawnPoint
-    {
-        get => spawnPoint;
-        set => spawnPoint = value;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
 
+    /// <summary>
+    /// when the checkpoint is reached, it sets the spawnpoint in the game manager
+    /// to the position of this checkpoint and then destorys the checkpoint
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        spawnPoint = GetComponent<Transform>().position;
-
-        if (playerLifeSystem.CurrentCheckpointPos != spawnPoint)
-        {
-         playerLifeSystem.CurrentCheckpointPos = spawnPoint;
-
-        }
+        gameManager.SpawnPoint = GetComponent<Transform>().position;
+        DisableCheckpoint();
     }
+
+
+    public void DisableCheckpoint()
+    {
+        Destroy(gameObject);
+    }
+
 }

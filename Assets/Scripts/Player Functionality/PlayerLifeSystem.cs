@@ -13,17 +13,28 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
 
     UIManager uiManager;
     SoundManager soundManager;
+    GameManager gameManager;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         uiManager = FindObjectOfType<UIManager>();
         soundManager = FindObjectOfType<SoundManager>();
         playerTransform = GetComponent<Transform>();
-        currentCheckpointPos = FindObjectOfType<CheckPointHandler>().SpawnPoint;
-        if (currentCheckpointPos != new Vector2(0,0))
+
+        if (gameManager.NumberOfSpawns == 0)
         {
-            gameObject.transform.position = currentCheckpointPos;
+            gameManager.NumberOfSpawns++;
+            GameObject startPos = GameObject.FindGameObjectWithTag("Starting Checkpoint");
+            playerTransform.position = startPos.GetComponent<Transform>().position;
+            Destroy(startPos);
+
         }
+        else
+        {
+          playerTransform.position = gameManager.SetPlayerSpawnPoint();
+        }
+       
     }
 
     public Vector2 CurrentCheckpointPos
