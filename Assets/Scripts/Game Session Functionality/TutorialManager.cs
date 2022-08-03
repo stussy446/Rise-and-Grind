@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class TutorialManager : MonoBehaviour
 {
     public Text[] textPopUps;
+    public string[] congratulatoryMessages;
     int popUpIndex = 0;
+    int currentMessageIndex;
     [SerializeField] float secondsToWait = 2f;
     [SerializeField] ExitGate exitGate;
 
@@ -15,7 +17,8 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        textPopUps[0].gameObject.SetActive(true); 
+        textPopUps[0].gameObject.SetActive(true);
+        currentMessageIndex = 0;
 
         for (int i = 1; i < textPopUps.Length; i++)
         {
@@ -83,8 +86,17 @@ public class TutorialManager : MonoBehaviour
 
     void NextTutorial()
     {
-        textPopUps[popUpIndex].gameObject.SetActive(false);
+        textPopUps[popUpIndex].text = congratulatoryMessages[currentMessageIndex];
         popUpIndex++;
+        currentMessageIndex++;
+        StartCoroutine(DelaySwitch());
+        
+    }
+
+    IEnumerator DelaySwitch()
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        textPopUps[popUpIndex - 1].gameObject.SetActive(false);
 
         textPopUps[popUpIndex].gameObject.SetActive(true);
     }
