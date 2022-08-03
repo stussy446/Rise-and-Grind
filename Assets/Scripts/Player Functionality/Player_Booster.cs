@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Player_Booster : MonoBehaviour
 {
-
+    Player_Controller playerController;
     Rigidbody2D _playerRigidBody;
     Object_BoostValueHolder boostValue;
     Vector2 boostVector = new Vector2(0, 1); 
@@ -15,6 +15,7 @@ public class Player_Booster : MonoBehaviour
 
     int beansLayerMask = 8;
     int goldenBeanLayerMask = 14;
+    [SerializeField] float secondsToWait = 1f;
 
     public UnityEvent GoldenBeanTouched;
 
@@ -27,6 +28,7 @@ public class Player_Booster : MonoBehaviour
             GoldenBeanTouched = new UnityEvent();
         }
 
+        playerController = GetComponent<Player_Controller>();
         _playerRigidBody = GetComponentInParent<Rigidbody2D>();
         _playerController = GetComponentInParent<Player_Controller>();
         soundManager = FindObjectOfType<SoundManager>();
@@ -93,10 +95,18 @@ public class Player_Booster : MonoBehaviour
     {
         if (collisonBoost != null)
         {
+            playerController.BeanTouched = true;
             _playerRigidBody.velocity = boostVector * collisonBoost.GetBoostSpeed();
+            StartCoroutine(EndBeanTouch());
 
         }
 
+    }
+
+    IEnumerator EndBeanTouch()
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        playerController.BeanTouched = false;
     }
     
 }
