@@ -16,6 +16,7 @@ public class Player_Controller : MonoBehaviour
     bool canMove = true;
     RigidbodyConstraints2D startingConstraints;
     SoundManager soundManager;
+    Animator playerAnimator;
 
 
     [Header("Move Speed and Jump Height")]
@@ -41,10 +42,11 @@ public class Player_Controller : MonoBehaviour
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
         soundManager = FindObjectOfType<SoundManager>();
+        playerAnimator = GetComponentInChildren<Animator>();
 
     }
 
-
+   
     // getter for playerIsAttacking, used in Player_Booster to determine if the
     // player will be boosted by an enemy attack or not 
     public bool GetPlayerIsAttacking() { return playerIsAttacking; }
@@ -94,6 +96,11 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        if (_moveInputXValue != 0 && IsGrounded()) { playerAnimator.SetBool("isMoving", true); }
+        else { playerAnimator.SetBool("isMoving", false); }
+        
+
+        
         Vector2 processedMoveVector = new Vector2(_moveInputXValue, 0) * moveSpeed;
         if (!IsGrounded())
         {
@@ -154,6 +161,7 @@ public class Player_Controller : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         playerIsAttacking = true;
+        playerAnimator.SetBool("isThrowing", true);
         onAttack?.Invoke();
 
     }
@@ -167,10 +175,12 @@ public class Player_Controller : MonoBehaviour
     private void StopAttack(InputAction.CallbackContext obj)
     {
         playerIsAttacking = false;
+        playerAnimator.SetBool("isThrowing", false);
+
 
     }
 
-   
+
     /// <summary>
     /// Called in Jump, utilizes raycast and layermasking to check if the player
     /// is touching a layer that they can jump on.

@@ -11,6 +11,7 @@ public class Player_Booster : MonoBehaviour
     Object_BoostValueHolder boostValue;
     Vector2 boostVector = new Vector2(0, 1); 
     Player_Controller _playerController;
+    SoundManager soundManager;
 
     int beansLayerMask = 8;
     int goldenBeanLayerMask = 14;
@@ -28,6 +29,7 @@ public class Player_Booster : MonoBehaviour
 
         _playerRigidBody = GetComponentInParent<Rigidbody2D>();
         _playerController = GetComponentInParent<Player_Controller>();
+        soundManager = FindObjectOfType<SoundManager>();
 
         
 
@@ -43,6 +45,7 @@ public class Player_Booster : MonoBehaviour
     {
         if (collision.gameObject.layer == beansLayerMask)
         {
+            soundManager.Play("BeanBoost");
             boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
             ProcessBoost(boostValue);
         }
@@ -66,6 +69,7 @@ public class Player_Booster : MonoBehaviour
     {
         if (collision.gameObject.layer == beansLayerMask)
         {
+            soundManager.Play("BeanBoost");
             boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
             ProcessBoost(boostValue);
         }
