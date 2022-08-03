@@ -83,7 +83,7 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     public void Die()
     {
         // set up animation stuff
-        // play death sound 
+        soundManager.Play("PlayerDeath");
         uiManager.UpdatePlayerHealth(healthPoints);
         StartCoroutine(DeathSequence());
         gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
