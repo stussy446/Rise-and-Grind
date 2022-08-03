@@ -830,7 +830,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1136783700}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2496150819752138882, guid: 69d4a295f35954c4ba4f3a03db7a726c, type: 3}
       propertyPath: m_Name
@@ -1832,7 +1832,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1136783700}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2496150819752138882, guid: 69d4a295f35954c4ba4f3a03db7a726c, type: 3}
       propertyPath: m_Name
