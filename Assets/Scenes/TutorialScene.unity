@@ -2690,6 +2690,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
   m_PrefabInstance: {fileID: 1160943178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648659102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 857953936693192012, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+  m_PrefabInstance: {fileID: 1160943178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d2d75faf3054fd188098f123e3bf10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1648865398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1404250976855961880, guid: 71b8dfc25c2d74373b698c9fc45743bd, type: 3}
@@ -2743,6 +2754,36 @@ MonoBehaviour:
   - Confront Karen
   secondsToWait: 2
   exitGate: {fileID: 2041359717}
+  onTutorialStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1648659102}
+        m_TargetAssemblyTypeName: Player_Controller, Assembly-CSharp
+        m_MethodName: DisableJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMoveTutorialEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1648659102}
+        m_TargetAssemblyTypeName: Player_Controller, Assembly-CSharp
+        m_MethodName: EnableJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1718596209
 Transform:
   m_ObjectHideFlags: 0

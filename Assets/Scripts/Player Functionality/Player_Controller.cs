@@ -325,4 +325,14 @@ public class Player_Controller : MonoBehaviour
 
         }
     }
+
+    public void DisableJump()
+    {
+        _playerControls.Player.Jump.Disable();
+    }
+
+    public void EnableJump()
+    {
+        _playerControls.Player.Jump.Enable();
+    }
 }

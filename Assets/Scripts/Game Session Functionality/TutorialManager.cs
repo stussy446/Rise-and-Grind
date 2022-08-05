@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
 
 public class TutorialManager : MonoBehaviour
 {
@@ -16,8 +18,25 @@ public class TutorialManager : MonoBehaviour
     GameManager gameManager;
     UIManager uiManager;
 
+
+    public UnityEvent onTutorialStart;
+    public UnityEvent onMoveTutorialEnd;
+
+
     private void Start()
     {
+        if (onTutorialStart == null)
+        {
+            onTutorialStart = new UnityEvent();
+        }
+
+        if (onMoveTutorialEnd == null)
+        {
+            onMoveTutorialEnd = new UnityEvent();
+        }
+
+        onTutorialStart?.Invoke();
+
         textPopUps[0].gameObject.SetActive(true);
         currentMessageIndex = 0;
 
@@ -38,7 +57,9 @@ public class TutorialManager : MonoBehaviour
         if (PlayerMoved())
         {
             NextTutorial();
+            
         }
+
 
         if (PlayerJumped())
         {
@@ -144,22 +165,30 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator DelaySwitch()
     {
+
         if (popUpIndex == 4)
         {
             yield return new WaitForSeconds(secondsToWait + 1f);
         }
-        else
+    
+        else if (popUpIndex == 3)
         {
-             yield return new WaitForSeconds(secondsToWait);
-
-        }
-        if (popUpIndex == 3)
-        {
+            yield return new WaitForSeconds(secondsToWait);
             GameObject[] beans = GameObject.FindGameObjectsWithTag("Bean");
             foreach (GameObject bean in beans)
             {
                 bean.GetComponent<SpriteRenderer>().enabled = true;
             }
+
+        }
+        else if (popUpIndex == 1)
+        {
+            yield return new WaitForSeconds(secondsToWait);
+            onMoveTutorialEnd?.Invoke();
+        }
+        else
+        {
+            yield return new WaitForSeconds(secondsToWait);
         }
 
         textPopUps[popUpIndex - 1].gameObject.SetActive(false);
