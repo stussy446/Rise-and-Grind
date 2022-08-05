@@ -1089,10 +1089,10 @@ MonoBehaviour:
   - {fileID: 1067056647}
   - {fileID: 434387996}
   congratulatoryMessages:
-  - 
-  - 
-  - 
-  - 
+  - Nice Job!
+  - Amazing!
+  - You're a Natural!
+  - Rise and Have Fun!
   - Confront Karen
   secondsToWait: 2
   exitGate: {fileID: 2041359717}
