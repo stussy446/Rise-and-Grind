@@ -17,6 +17,7 @@ TagManager:
   - Checkpoint
   - Level Exit
   - Starting Checkpoint
+  - Golden Bean
   layers:
   - Default
   - TransparentFX

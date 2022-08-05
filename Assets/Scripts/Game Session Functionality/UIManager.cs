@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     TMP_Text scoreText;
     int score = 0;
 
+    public int GetScore { get => score; }
+
     /// <summary>
     /// prevents more than one UI Manager from being active at a time 
     /// </summary>

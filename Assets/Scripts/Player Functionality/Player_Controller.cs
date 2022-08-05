@@ -16,6 +16,7 @@ public class Player_Controller : MonoBehaviour
     bool playerIsAttacking = false;
     bool canMove = true;
     bool beanTouched = false;
+    bool goldenBeanTouched = false;
     RigidbodyConstraints2D startingConstraints;
     SoundManager soundManager;
     Animator playerAnimator;
@@ -70,6 +71,11 @@ public class Player_Controller : MonoBehaviour
     {
         get => beanTouched;
         set => beanTouched = value;
+    }
+
+    public bool GoldenBeanTouched
+    {
+        get => goldenBeanTouched;
     }
 
 
@@ -276,6 +282,7 @@ public class Player_Controller : MonoBehaviour
     {
         if (canMove)
         {
+            goldenBeanTouched = true;
             startingConstraints = _playerRigidBody.constraints;
             canMove = !canMove;
 
@@ -296,6 +303,7 @@ public class Player_Controller : MonoBehaviour
         
         yield return new WaitForSeconds(goldenBeanLength);
         canMove = !canMove;
+        goldenBeanTouched = false;
         _playerControls.Player.Enable();
         _playerControls.GoldenPlayer.Disable();
         _playerRigidBody.velocity = transform.up * goldenHeight;

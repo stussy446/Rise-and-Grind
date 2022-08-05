@@ -14,6 +14,7 @@ public class TutorialManager : MonoBehaviour
 
     Player_Controller playerController;
     GameManager gameManager;
+    UIManager uiManager;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class TutorialManager : MonoBehaviour
 
         playerController = FindObjectOfType<Player_Controller>();
         gameManager = FindObjectOfType<GameManager>();
+        uiManager = FindObjectOfType<UIManager>();
 
     }
 
@@ -44,6 +46,22 @@ public class TutorialManager : MonoBehaviour
         }
 
         if (PlayerAttacked())
+        {
+            NextTutorial();
+            
+        }
+
+        if (PlayerTouchedBean())
+        {
+            NextTutorial();
+        }
+
+        if (PlayerTouchedGoldenBean())
+        {
+            NextTutorial();
+        }
+
+        if (PlayerCollected())
         {
             NextTutorial();
         }
@@ -83,9 +101,40 @@ public class TutorialManager : MonoBehaviour
         return false;
     }
 
+    bool PlayerTouchedBean()
+    {
+        if (playerController.BeanTouched && popUpIndex == 3)
+        {
+          
+            return true;
+        }
+        return false;
+    }
+
+    bool PlayerTouchedGoldenBean()
+    {
+       
+        if (playerController.GoldenBeanTouched && popUpIndex == 4)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool PlayerCollected()
+    {
+        if (uiManager.GetScore > 0 && popUpIndex == 5)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
 
     void NextTutorial()
     {
+
         textPopUps[popUpIndex].text = congratulatoryMessages[currentMessageIndex];
         popUpIndex++;
         currentMessageIndex++;
@@ -95,7 +144,24 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator DelaySwitch()
     {
-        yield return new WaitForSeconds(secondsToWait);
+        if (popUpIndex == 4)
+        {
+            yield return new WaitForSeconds(secondsToWait + 1f);
+        }
+        else
+        {
+             yield return new WaitForSeconds(secondsToWait);
+
+        }
+        if (popUpIndex == 3)
+        {
+            GameObject[] beans = GameObject.FindGameObjectsWithTag("Bean");
+            foreach (GameObject bean in beans)
+            {
+                bean.GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
+
         textPopUps[popUpIndex - 1].gameObject.SetActive(false);
 
         textPopUps[popUpIndex].gameObject.SetActive(true);
