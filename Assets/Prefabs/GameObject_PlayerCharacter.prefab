@@ -186,7 +186,7 @@ Rigidbody2D:
   m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 135f8bbf2095d4408878800489432dd9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -298,6 +298,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3376c496-068e-40d7-aa7c-7631870ab8ff
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3071da48-4c7d-4e8c-80cf-0dd533c08d3f
+    m_ActionName: GoldenPlayer/Rotate[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d4c51e2-2800-4c0c-9766-debff4e78087
+    m_ActionName: GoldenPlayer/Boost[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
