@@ -53,7 +53,7 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - name: Effervesce
     clip: {fileID: 8300000, guid: 91e00be8f3fd1694cb7497d0ef06ce94, type: 3}
-    volume: 0.725
+    volume: 0.526
     pitch: 1
     loop: 1
     audioSource: {fileID: 0}
