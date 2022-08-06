@@ -168,7 +168,8 @@ public class TutorialManager : MonoBehaviour
 
         if (popUpIndex == 4)
         {
-            yield return new WaitForSeconds(secondsToWait + 1f);
+            yield return new WaitForSeconds(secondsToWait);
+            
         }
     
         else if (popUpIndex == 3)
@@ -178,6 +179,7 @@ public class TutorialManager : MonoBehaviour
             foreach (GameObject bean in beans)
             {
                 bean.GetComponent<SpriteRenderer>().enabled = true;
+                bean.GetComponent<CapsuleCollider2D>().enabled = true;
             }
 
         }
@@ -185,6 +187,12 @@ public class TutorialManager : MonoBehaviour
         {
             yield return new WaitForSeconds(secondsToWait);
             onMoveTutorialEnd?.Invoke();
+        }
+        else if (popUpIndex == 2)
+        {
+            yield return new WaitForSeconds(secondsToWait);
+            playerController.EnableAttack();
+
         }
         else
         {

@@ -335,4 +335,15 @@ public class Player_Controller : MonoBehaviour
     {
         _playerControls.Player.Jump.Enable();
     }
+
+    public void DisableAttack()
+    {
+        _playerControls.Player.Fire.Disable();
+    }
+
+    public void EnableAttack()
+    {
+        _playerControls.Player.Fire.Enable();
+    }
 }
+
