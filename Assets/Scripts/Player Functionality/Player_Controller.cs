@@ -56,12 +56,18 @@ public class Player_Controller : MonoBehaviour
     {
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
-        soundManager = FindObjectOfType<SoundManager>();
         playerAnimator = GetComponentInChildren<Animator>();
+        StartCoroutine(DelaySingleton());
 
     }
 
-   
+    IEnumerator DelaySingleton()
+    {
+        yield return new WaitForSeconds(.25f);
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
+
     // getter for playerIsAttacking, used in Player_Booster to determine if the
     // player will be boosted by an enemy attack or not 
     public bool GetPlayerIsAttacking() { return playerIsAttacking; }
@@ -105,6 +111,8 @@ public class Player_Controller : MonoBehaviour
         {
             onAttack = new UnityEvent();
         }
+
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void Update()
@@ -202,7 +210,6 @@ public class Player_Controller : MonoBehaviour
     {
         if (IsGrounded())
         {
-
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             soundManager.Play("PlayerJump");
         }

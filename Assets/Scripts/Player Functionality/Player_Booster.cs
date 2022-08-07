@@ -31,19 +31,25 @@ public class Player_Booster : MonoBehaviour
         playerController = GetComponent<Player_Controller>();
         _playerRigidBody = GetComponentInParent<Rigidbody2D>();
         _playerController = GetComponentInParent<Player_Controller>();
-        soundManager = FindObjectOfType<SoundManager>();
-
-        
+        StartCoroutine(DelaySingleton());
 
     }
 
 
-    /// <summary>
-    /// if the player collides with a trigger object other than an enemy give player a vertical boost based
-    /// on that beans boostspeed bonus
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnTriggerEnter2D(Collider2D collision)
+
+IEnumerator DelaySingleton()
+{
+    yield return new WaitForSeconds(.25f);
+    soundManager = FindObjectOfType<SoundManager>();
+}
+
+
+/// <summary>
+/// if the player collides with a trigger object other than an enemy give player a vertical boost based
+/// on that beans boostspeed bonus
+/// </summary>
+/// <param name="collision"></param>
+private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == beansLayerMask)
         {
