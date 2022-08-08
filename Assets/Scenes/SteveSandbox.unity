@@ -2788,6 +2788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TouchControlsUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7880211033479415045, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
 --- !u!1001 &8426190485721019345
@@ -2807,11 +2811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2272726630713134787, guid: 871715e9d3a6d473aa54607db137844e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2
+      value: 26.46
       objectReference: {fileID: 0}
     - target: {fileID: 2272726630713134787, guid: 871715e9d3a6d473aa54607db137844e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.24
+      value: 7.71
       objectReference: {fileID: 0}
     - target: {fileID: 2272726630713134787, guid: 871715e9d3a6d473aa54607db137844e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2843,6 +2847,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2272726630713134787, guid: 871715e9d3a6d473aa54607db137844e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139346385242334304, guid: 871715e9d3a6d473aa54607db137844e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813852812723114793, guid: 871715e9d3a6d473aa54607db137844e, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

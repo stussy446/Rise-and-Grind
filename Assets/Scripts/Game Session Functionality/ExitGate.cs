@@ -17,5 +17,12 @@ public class ExitGate : MonoBehaviour
         gameManager.LoadNextLevel();
     }
 
-   
+    public void Activate()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
+    }
+
+
 }
