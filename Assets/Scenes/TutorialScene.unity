@@ -2041,6 +2041,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7880211033328971893, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211033328971895, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 591.476
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211033328971895, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 498.799
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211033328971895, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 255
+      objectReference: {fileID: 0}
     - target: {fileID: 7880211033479415041, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2128,6 +2144,42 @@ PrefabInstance:
     - target: {fileID: 7880211033479415045, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
       propertyPath: m_Name
       value: TouchControlsUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052612, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_Color.a
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 398.572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034141052614, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034601966922, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.12005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034601966922, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.12005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034601966922, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.060025
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034601966922, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880211034601966922, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ee9d71a86974301b999adcedbdc433, type: 3}
