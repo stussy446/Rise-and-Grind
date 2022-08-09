@@ -7141,6 +7141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ced2e2d49fd544df8183b8e361e4ef2, type: 3}
+--- !u!1 &1016675874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7093514814022509952, guid: bbd2f3ed368684544a2ff0050b61da59, type: 3}
+  m_PrefabInstance: {fileID: 2063483524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1022002773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3268600508287581622, guid: 4ced2e2d49fd544df8183b8e361e4ef2, type: 3}
@@ -44526,6 +44531,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7093514814022509949, guid: bbd2f3ed368684544a2ff0050b61da59, type: 3}
+      propertyPath: m_UpdateMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093514814022509949, guid: bbd2f3ed368684544a2ff0050b61da59, type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7093514814022509952, guid: bbd2f3ed368684544a2ff0050b61da59, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -44541,6 +44554,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7093514814022509948, guid: bbd2f3ed368684544a2ff0050b61da59, type: 3}
   m_PrefabInstance: {fileID: 2063483524}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063483529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016675874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 480
+  m_RefResolutionY: 270
+  m_UpscaleRT: 1
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!4 &2064235006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2496150819752138886, guid: 69d4a295f35954c4ba4f3a03db7a726c, type: 3}
