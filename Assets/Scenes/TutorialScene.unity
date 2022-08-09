@@ -1639,6 +1639,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 673972085289376365, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 806536044689633824, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_Name
       value: Player Rig
@@ -1687,7 +1691,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4246364465489594470, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
 --- !u!1001 &1232456864
 PrefabInstance:
