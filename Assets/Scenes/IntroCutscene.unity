@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3442,7 +3442,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748901975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
@@ -3491,16 +3491,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b324a4685d480b346b084e8a5dbacbde, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3591,16 +3591,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b324a4685d480b346b084e8a5dbacbde, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3729,12 +3729,12 @@ PlayableDirector:
     value: {fileID: 622115302}
   - key: {fileID: -3444166462160805048, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
     value: {fileID: 1096693187}
-  - key: {fileID: 7127618478780252571, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
-    value: {fileID: 416235425}
   - key: {fileID: 9160056403175717962, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
     value: {fileID: 793556296}
   - key: {fileID: 4298252330735042004, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
     value: {fileID: 748901977}
+  - key: {fileID: -3129595637424801579, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 416235425}
   m_ExposedReferences:
     m_References:
     - 41eb6eb07b8319641bb9fbf1ce5209de: {fileID: 1110850946}
@@ -34397,7 +34397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50974905, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 51}
+  m_AnchoredPosition: {x: -6, y: -10}
   m_SizeDelta: {x: 109.3048, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096693185
