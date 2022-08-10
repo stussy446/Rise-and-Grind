@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 using System;
 
 public class DialogueSwitcher : MonoBehaviour
@@ -12,6 +13,7 @@ public class DialogueSwitcher : MonoBehaviour
     [SerializeField] GameObject samDialogueBox;
 
     PlayerControls dialogueControls;
+    PlayableDirector director;
 
     Text [] karenLines;
     Text [] samLines;
@@ -20,6 +22,7 @@ public class DialogueSwitcher : MonoBehaviour
     int currentSamLine = 0;
     int totalLines;
     int currentLineCount = 0;
+    [SerializeField] float secondsToWait = 1f;
 
     string currentCharacter;
 
@@ -96,8 +99,17 @@ public class DialogueSwitcher : MonoBehaviour
     private void EndScene()
     {
         Debug.Log("Scene over");
-        dialogueControls.Disable();
+        dialogueControls.UI.Disable();
+        director = GameObject.FindGameObjectWithTag("Finish").GetComponent<PlayableDirector>();
+        StartCoroutine(GoToTutorial());
         
+    }
+
+
+    IEnumerator GoToTutorial()
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        FindObjectOfType<GameManager>().LoadNextLevel();
     }
 
     private void SwitchToKaren()
