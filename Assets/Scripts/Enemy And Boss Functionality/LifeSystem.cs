@@ -58,6 +58,10 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     public IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathLength);
+        if (gameObject.CompareTag("Boss"))
+        {
+            FindObjectOfType<ExitGate>().Activate();
+        }
         Destroy(gameObject);
     }
 

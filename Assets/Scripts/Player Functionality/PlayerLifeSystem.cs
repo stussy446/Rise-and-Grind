@@ -17,10 +17,9 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        uiManager = FindObjectOfType<UIManager>();
-        soundManager = FindObjectOfType<SoundManager>();
+       
         playerTransform = GetComponent<Transform>();
+        gameManager = FindObjectOfType<GameManager>();
 
         if (gameManager.NumberOfSpawns == 0)
         {
@@ -34,7 +33,16 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         {
           playerTransform.position = gameManager.SetPlayerSpawnPoint();
         }
-       
+
+        StartCoroutine(DelaySingleton());
+
+    }
+
+    IEnumerator DelaySingleton()
+    {
+        yield return new WaitForSeconds(.25f);
+        uiManager = FindObjectOfType<UIManager>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     public Vector2 CurrentCheckpointPos
@@ -83,7 +91,7 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     public void Die()
     {
         // set up animation stuff
-        // play death sound 
+        soundManager.Play("PlayerDeath");
         uiManager.UpdatePlayerHealth(healthPoints);
         StartCoroutine(DeathSequence());
         gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;

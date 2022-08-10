@@ -10,12 +10,13 @@ public class Player_Controller : MonoBehaviour
     Rigidbody2D _playerRigidBody;
     BoxCollider2D _playerBoxCollider;
     PlayerControls _playerControls;
-    float _moveInputXValue;
+    float moveInputXValue;
     float _rotateInputValue;
 
     bool playerIsAttacking = false;
     bool canMove = true;
     bool beanTouched = false;
+    bool goldenBeanTouched = false;
     RigidbodyConstraints2D startingConstraints;
     SoundManager soundManager;
     Animator playerAnimator;
@@ -47,25 +48,40 @@ public class Player_Controller : MonoBehaviour
 
 
     [SerializeField] UnityEvent onAttack;
-    
+    [SerializeField] UnityEvent onMove;
+
+
 
     private void Awake()
     {
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _playerBoxCollider = GetComponent<BoxCollider2D>();
-        soundManager = FindObjectOfType<SoundManager>();
         playerAnimator = GetComponentInChildren<Animator>();
+        StartCoroutine(DelaySingleton());
 
     }
 
-   
+    IEnumerator DelaySingleton()
+    {
+        yield return new WaitForSeconds(.25f);
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
+
     // getter for playerIsAttacking, used in Player_Booster to determine if the
     // player will be boosted by an enemy attack or not 
     public bool GetPlayerIsAttacking() { return playerIsAttacking; }
+    public float GetMoveInputValue() { return moveInputXValue; }
+
     public bool BeanTouched
     {
         get => beanTouched;
         set => beanTouched = value;
+    }
+
+    public bool GoldenBeanTouched
+    {
+        get => goldenBeanTouched;
     }
 
 
@@ -84,10 +100,24 @@ public class Player_Controller : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        if (onMove == null)
+        {
+            onMove = new UnityEvent();
+        }
+
+        if (onAttack == null)
+        {
+            onAttack = new UnityEvent();
+        }
+
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     private void Update()
     {
-        _moveInputXValue = _playerControls.Player.Move.ReadValue<Vector2>().x;
+        moveInputXValue = _playerControls.Player.Move.ReadValue<Vector2>().x;
         _rotateInputValue = _playerControls.GoldenPlayer.Rotate.ReadValue<Vector2>().x;
 
     }
@@ -115,16 +145,16 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        if (_moveInputXValue != 0 && IsGrounded()) { playerAnimator.SetBool("isMoving", true); }
+        if (moveInputXValue != 0 && IsGrounded()) { playerAnimator.SetBool("isMoving", true); }
         else { playerAnimator.SetBool("isMoving", false); }
 
-        float targetSpeed = _moveInputXValue * moveSpeed;
+        float targetSpeed = moveInputXValue * moveSpeed;
         float speedDif = targetSpeed - _playerRigidBody.velocity.x;
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deccelaration;
 
         float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
         
-        Vector2 processedMoveVector = new Vector2(_moveInputXValue, 0) * moveSpeed;
+        Vector2 processedMoveVector = new Vector2(moveInputXValue, 0) * moveSpeed;
         if (!IsGrounded())
         {
             _playerRigidBody.AddForce(movement / jumpMoveSpeedDivider * Vector2.right * Time.deltaTime);
@@ -134,7 +164,7 @@ public class Player_Controller : MonoBehaviour
         {
             _playerRigidBody.AddForce(movement * Vector2.right * Time.deltaTime);
             // _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
-            if (Mathf.Abs(_moveInputXValue) < 0.01f)
+            if (Mathf.Abs(moveInputXValue) < 0.01f)
             {
                 float amount = Mathf.Min(Mathf.Abs(_playerRigidBody.velocity.x), Mathf.Abs(frictionAmount));
                 amount *= Mathf.Sign(_playerRigidBody.velocity.x);
@@ -143,18 +173,19 @@ public class Player_Controller : MonoBehaviour
 
         }
 
+        onMove?.Invoke();
 
     }
 
 
     void FlipPlayer()
     {
-        if (_moveInputXValue < 0)
+        if (moveInputXValue < 0)
         {
              transform.localScale = new Vector2(-1f, 1f);
 
         }
-        else if (_moveInputXValue > 0)
+        else if (moveInputXValue > 0)
         {
             transform.localScale = new Vector2(1f, 1f);
         }
@@ -179,7 +210,6 @@ public class Player_Controller : MonoBehaviour
     {
         if (IsGrounded())
         {
-
             _playerRigidBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             soundManager.Play("PlayerJump");
         }
@@ -243,7 +273,7 @@ public class Player_Controller : MonoBehaviour
     /// (for now, "platforms")
     /// </summary>
     /// <returns>bool true or false</returns>
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         float extraHeightTest = .02f;
         RaycastHit2D raycastHit = Physics2D.Raycast(_playerBoxCollider.bounds.center, Vector2.down, _playerBoxCollider.bounds.extents.y + extraHeightTest, platformLayerMask);
@@ -259,6 +289,7 @@ public class Player_Controller : MonoBehaviour
     {
         if (canMove)
         {
+            goldenBeanTouched = true;
             startingConstraints = _playerRigidBody.constraints;
             canMove = !canMove;
 
@@ -279,6 +310,7 @@ public class Player_Controller : MonoBehaviour
         
         yield return new WaitForSeconds(goldenBeanLength);
         canMove = !canMove;
+        goldenBeanTouched = false;
         _playerControls.Player.Enable();
         _playerControls.GoldenPlayer.Disable();
         _playerRigidBody.velocity = transform.up * goldenHeight;
@@ -300,4 +332,25 @@ public class Player_Controller : MonoBehaviour
 
         }
     }
+
+    public void DisableJump()
+    {
+        _playerControls.Player.Jump.Disable();
+    }
+
+    public void EnableJump()
+    {
+        _playerControls.Player.Jump.Enable();
+    }
+
+    public void DisableAttack()
+    {
+        _playerControls.Player.Fire.Disable();
+    }
+
+    public void EnableAttack()
+    {
+        _playerControls.Player.Fire.Enable();
+    }
 }
+

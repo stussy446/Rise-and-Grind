@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1277996091
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 20c1d22a5353740548e96fd33f79c001, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
@@ -132,8 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 5110914839505517976}
   crossHairs: {fileID: 2002133038}
-  speed: 1
-  maximumRotation: 36
 --- !u!1 &806536044689633824
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +186,7 @@ Rigidbody2D:
   m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 135f8bbf2095d4408878800489432dd9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -206,7 +204,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003619194, y: 0}
+  m_Offset: {x: 0.094973564, y: -0.5089525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -217,7 +215,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41389465, y: 0.875}
+  m_Size: {x: 0.61108017, y: 1.0082343}
   m_EdgeRadius: 0
 --- !u!114 &7283298344835588077
 MonoBehaviour:
@@ -300,6 +298,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3376c496-068e-40d7-aa7c-7631870ab8ff
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3071da48-4c7d-4e8c-80cf-0dd533c08d3f
+    m_ActionName: GoldenPlayer/Rotate[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d4c51e2-2800-4c0c-9766-debff4e78087
+    m_ActionName: GoldenPlayer/Boost[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -347,6 +353,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1087292158
 MonoBehaviour:
   m_ObjectHideFlags: 0

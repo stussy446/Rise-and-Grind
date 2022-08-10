@@ -53,7 +53,19 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - name: Effervesce
     clip: {fileID: 8300000, guid: 91e00be8f3fd1694cb7497d0ef06ce94, type: 3}
-    volume: 1
+    volume: 0.526
     pitch: 1
     loop: 1
+    audioSource: {fileID: 0}
+  - name: BeanBoost
+    clip: {fileID: 8300000, guid: 81fcb86d9b39e9c41a4770dcbc76d14e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 3fd7f3c444494de47b552a9bfacb7db5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     audioSource: {fileID: 0}

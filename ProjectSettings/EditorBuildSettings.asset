@@ -6,13 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: f23b8c208a38f7f448ffa7b346220240
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 98da8a88b95684e368677f7ccd109e49
+  - enabled: 1
     path: Assets/Scenes/SteveSandbox.unity
     guid: 2ef44a13cf202bb40a5ad23e647d744c
   - enabled: 1
     path: Assets/Scenes/AlphaBuildScene.unity
     guid: 75c9f7670a8554678855dced20c30eb1
-  - enabled: 1
-    path: Assets/Scenes/TylerSandbox.unity
-    guid: 8fae1f245d3d04d3cb3b458161c74b9a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 958b86c64b8e64f26bd84e09d71879ae, type: 2}

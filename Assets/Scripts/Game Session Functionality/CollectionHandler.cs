@@ -12,6 +12,12 @@ public class CollectionHandler : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(DelaySingleton());
+    }
+
+    IEnumerator DelaySingleton()
+    {
+        yield return new WaitForSeconds(.25f);
         uiManager = FindObjectOfType<UIManager>();
     }
 
