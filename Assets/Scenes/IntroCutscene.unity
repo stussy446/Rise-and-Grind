@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.200012, y: 0.2000122}
+  m_AnchoredPosition: {x: 91.7, y: 0.2000122}
   m_SizeDelta: {x: 664.56, y: 82.217}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &11957410
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9669811, b: 0.9669811, a: 1}
+  m_Color: {r: 1, g: 0.9198113, b: 0.9198113, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3489,6 +3489,8 @@ GameObject:
   m_Component:
   - component: {fileID: 915775804}
   - component: {fileID: 915775805}
+  - component: {fileID: 915775807}
+  - component: {fileID: 915775806}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -3537,6 +3539,47 @@ PlayableDirector:
     value: {fileID: 416235425}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &915775806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915775803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5afdafaf38a48cab2a24e0f096988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  karenDialogueBox: {fileID: 748901975}
+  samDialogueBox: {fileID: 793556294}
+--- !u!114 &915775807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915775803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffe029ee9a7649768167480d2d06d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSceneOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 915775806}
+        m_TargetAssemblyTypeName: DialogueSwitcher, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1000530226
 GameObject:
   m_ObjectHideFlags: 0
@@ -34035,7 +34078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1028863979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34053,7 +34096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.981226, y: 0.2}
+  m_AnchoredPosition: {x: 53.1, y: 24.3}
   m_SizeDelta: {x: 876.02, y: 100.217}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1028863980
@@ -34326,6 +34369,10 @@ PrefabInstance:
     - target: {fileID: 806536044689633824, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_Name
       value: GameObject_PlayerCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683021549850792594, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2096501279519027998, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_Size.x
@@ -39253,6 +39300,7 @@ GameObject:
   - component: {fileID: 1975872973}
   - component: {fileID: 1975872972}
   - component: {fileID: 1975872974}
+  - component: {fileID: 1975872975}
   m_Layer: 5
   m_Name: RogueCaves Studios presents
   m_TagString: Untagged
@@ -39342,3 +39390,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1975872975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975872970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: cd3ad8268c256476490d3f8b9fbf7cfd, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 915775803}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
