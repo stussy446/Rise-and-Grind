@@ -34,6 +34,8 @@ public class DirectorHandler : MonoBehaviour
     {
         if (director.time == director.duration)
         {
+            
+            Debug.Log("hey");
             onSceneOver?.Invoke();
         }
         return true;

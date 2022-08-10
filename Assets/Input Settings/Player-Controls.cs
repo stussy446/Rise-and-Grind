@@ -369,6 +369,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GoToNextLineOfDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0d1c7ce-a594-4a8a-bbc9-21c5cc987ed7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -789,6 +798,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39ce730a-3b25-4d68-9d68-a7cfae6b3069"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GoToNextLineOfDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa46ca43-803b-4c2e-acd4-5abfd01d49fa"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GoToNextLineOfDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -977,6 +1008,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        m_UI_GoToNextLineOfDialogue = m_UI.FindAction("GoToNextLineOfDialogue", throwIfNotFound: true);
         // GoldenPlayer
         m_GoldenPlayer = asset.FindActionMap("GoldenPlayer", throwIfNotFound: true);
         m_GoldenPlayer_Rotate = m_GoldenPlayer.FindAction("Rotate", throwIfNotFound: true);
@@ -1107,6 +1139,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
+    private readonly InputAction m_UI_GoToNextLineOfDialogue;
     public struct UIActions
     {
         private @PlayerControls m_Wrapper;
@@ -1121,6 +1154,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+        public InputAction @GoToNextLineOfDialogue => m_Wrapper.m_UI_GoToNextLineOfDialogue;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1160,6 +1194,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @TrackedDeviceOrientation.started -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
+                @GoToNextLineOfDialogue.started -= m_Wrapper.m_UIActionsCallbackInterface.OnGoToNextLineOfDialogue;
+                @GoToNextLineOfDialogue.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnGoToNextLineOfDialogue;
+                @GoToNextLineOfDialogue.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnGoToNextLineOfDialogue;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1194,6 +1231,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+                @GoToNextLineOfDialogue.started += instance.OnGoToNextLineOfDialogue;
+                @GoToNextLineOfDialogue.performed += instance.OnGoToNextLineOfDialogue;
+                @GoToNextLineOfDialogue.canceled += instance.OnGoToNextLineOfDialogue;
             }
         }
     }
@@ -1303,6 +1343,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        void OnGoToNextLineOfDialogue(InputAction.CallbackContext context);
     }
     public interface IGoldenPlayerActions
     {
