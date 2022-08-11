@@ -47098,11 +47098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567973086532254738, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.81
+      value: 9.09
       objectReference: {fileID: 0}
     - target: {fileID: 7567973086532254738, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.04
+      value: 71.52
       objectReference: {fileID: 0}
     - target: {fileID: 7567973086532254738, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47155,6 +47155,22 @@ PrefabInstance:
     - target: {fileID: 7567973086532254740, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_Name
       value: CameraSwitchTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567973086532254741, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9169831
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567973086532254741, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
+      propertyPath: m_Size.y
+      value: 1.257046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567973086532254741, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.041508436
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567973086532254741, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.49934232
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
