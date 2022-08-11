@@ -21,18 +21,18 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         playerTransform = GetComponent<Transform>();
         gameManager = FindObjectOfType<GameManager>();
 
-        if (gameManager.NumberOfSpawns == 0)
-        {
-            gameManager.NumberOfSpawns++;
-            GameObject startPos = GameObject.FindGameObjectWithTag("Starting Checkpoint");
-            playerTransform.position = startPos.GetComponent<Transform>().position;
-            Destroy(startPos);
+        //if (gameManager.NumberOfSpawns == 0)
+        //{
+        //    gameManager.NumberOfSpawns++;
+        //    GameObject startPos = GameObject.FindGameObjectWithTag("Starting Checkpoint");
+        //    playerTransform.position = startPos.GetComponent<Transform>().position;
+        //    Destroy(startPos);
 
-        }
-        else
-        {
-          playerTransform.position = gameManager.SetPlayerSpawnPoint();
-        }
+        //}
+        //else
+        //{
+        //  playerTransform.position = gameManager.SetPlayerSpawnPoint();
+        //}
 
         StartCoroutine(DelaySingleton());
 

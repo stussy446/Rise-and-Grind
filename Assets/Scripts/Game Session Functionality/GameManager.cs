@@ -10,19 +10,19 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     Vector2 currentPlayerSpawnPoint;
     int numberOfSpawns = 0;
-    GameObject startingCheckpoint;
+    //GameObject startingCheckpoint;
 
-    public Vector2 SpawnPoint
-    {
-        get => currentPlayerSpawnPoint;
-        set => currentPlayerSpawnPoint = value;
-    }
+    //public Vector2 SpawnPoint
+    //{
+    //    get => currentPlayerSpawnPoint;
+    //    set => currentPlayerSpawnPoint = value;
+    //}
 
-    public int NumberOfSpawns
-    {
-        get => numberOfSpawns;
-        set => numberOfSpawns = value;
-    }
+    //public int NumberOfSpawns
+    //{
+    //    get => numberOfSpawns;
+    //    set => numberOfSpawns = value;
+    //}
 
     private void Awake()
     {
@@ -40,10 +40,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public Vector2 SetPlayerSpawnPoint()
-    {
-        return currentPlayerSpawnPoint;
-    }
+    //public Vector2 SetPlayerSpawnPoint()
+    //{
+    //    return currentPlayerSpawnPoint;
+    //}
 
 
     /// <summary>
