@@ -61,6 +61,9 @@ TagManager:
   - name: Platforms
     uniqueID: 2559409247
     locked: 0
+  - name: Collectible
+    uniqueID: 698889583
+    locked: 0
   - name: Bean
     uniqueID: 3094355711
     locked: 0

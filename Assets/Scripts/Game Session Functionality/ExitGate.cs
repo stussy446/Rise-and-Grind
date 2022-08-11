@@ -14,6 +14,8 @@ public class ExitGate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        FindObjectOfType<ScenePersist>().ResetScenePersist();
+        Debug.Log("Destroying Scene Persist");
         gameManager.LoadNextLevel();
     }
 
