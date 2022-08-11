@@ -6,13 +6,12 @@ public class CheckPointHandler : MonoBehaviour
 {
     PlayerLifeSystem playerLifeSystem;
     Vector2 spawnPoint;
-    GameManager gameManager;
+    ScenePersist currentScene;
 
 
     void Start()
     {
-        playerLifeSystem = FindObjectOfType<PlayerLifeSystem>();
-        gameManager = FindObjectOfType<GameManager>();
+        currentScene = FindObjectOfType<ScenePersist>();
     }
 
 
@@ -23,7 +22,9 @@ public class CheckPointHandler : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManager.SpawnPoint = GetComponent<Transform>().position;
+        currentScene.CurrentCheckpointPos = this.gameObject.GetComponent<Transform>().position;
+        Debug.Log("new position is: " + currentScene.CurrentCheckpointPos);
+        Debug.Log("scene persist checkpoint set to: " + currentScene.CurrentCheckpointPos);
         DisableCheckpoint();
     }
 
