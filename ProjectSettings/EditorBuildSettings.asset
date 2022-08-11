@@ -12,10 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialScene.unity
     guid: 98da8a88b95684e368677f7ccd109e49
   - enabled: 1
-    path: Assets/Scenes/SteveSandbox.unity
-    guid: 2ef44a13cf202bb40a5ad23e647d744c
-  - enabled: 1
-    path: Assets/Scenes/AlphaBuildScene.unity
-    guid: 75c9f7670a8554678855dced20c30eb1
+    path: Assets/Scenes/Level 1 Scene.unity
+    guid: e4fd37413fdb74839aae64535208786c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 958b86c64b8e64f26bd84e09d71879ae, type: 2}

@@ -3754,7 +3754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   karenDialogueBox: {fileID: 748901975}
   samDialogueBox: {fileID: 793556294}
-  secondsToWait: 5
+  secondsToWait: 2
 --- !u!114 &915775807
 MonoBehaviour:
   m_ObjectHideFlags: 0
