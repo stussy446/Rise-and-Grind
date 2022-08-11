@@ -110,6 +110,8 @@ public class DialogueSwitcher : MonoBehaviour
     {
         yield return new WaitForSeconds(secondsToWait);
         FindObjectOfType<GameManager>().LoadNextLevel();
+        Debug.Log("Destroying Scene Persist");
+        FindObjectOfType<ScenePersist>().ResetScenePersist();
     }
 
     private void SwitchToKaren()
