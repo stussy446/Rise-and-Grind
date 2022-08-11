@@ -18,6 +18,7 @@ TagManager:
   - Level Exit
   - Starting Checkpoint
   - Golden Bean
+  - Karen Hitbox
   layers:
   - Default
   - TransparentFX
