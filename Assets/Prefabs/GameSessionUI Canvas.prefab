@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 2330510412726677782}
   - component: {fileID: 2330510412726677783}
   m_Layer: 5
-  m_Name: GameSessionUI
+  m_Name: GameSessionUI Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
