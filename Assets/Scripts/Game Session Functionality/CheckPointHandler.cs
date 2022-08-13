@@ -23,8 +23,6 @@ public class CheckPointHandler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         currentScene.CurrentCheckpointPos = this.gameObject.GetComponent<Transform>().position;
-        Debug.Log("new position is: " + currentScene.CurrentCheckpointPos);
-        Debug.Log("scene persist checkpoint set to: " + currentScene.CurrentCheckpointPos);
         DisableCheckpoint();
     }
 

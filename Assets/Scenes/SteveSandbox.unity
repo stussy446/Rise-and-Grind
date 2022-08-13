@@ -534,7 +534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -193.7, y: -105.49999}
+  m_AnchoredPosition: {x: -193.7, y: -80}
   m_SizeDelta: {x: 114.7215, y: 81.0303}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &204538803
@@ -643,7 +643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91c56166886649e1a15b74456d6ceae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 43428061}
 --- !u!1 &241485619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1021,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 546107733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 204538806}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &546107733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,7 +1165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2474477489940945876, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -126.21999
+      value: -100.82
       objectReference: {fileID: 0}
     - target: {fileID: 5690436251361902715, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
       propertyPath: m_Name
@@ -1222,7 +1233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327229533711990744, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -108.1
+      value: -82.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
@@ -1427,7 +1438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 673733230}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 204538806}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &673733230
 MonoBehaviour:
   m_ObjectHideFlags: 0
