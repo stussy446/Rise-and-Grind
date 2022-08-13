@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 43428063}
   m_Layer: 5
   m_Name: Pause Menu
-  m_TagString: Untagged
+  m_TagString: Pause Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 204538805}
   - component: {fileID: 204538804}
   - component: {fileID: 204538803}
-  - component: {fileID: 204538802}
+  - component: {fileID: 204538806}
   m_Layer: 5
   m_Name: Pause Button
   m_TagString: Untagged
@@ -534,21 +534,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -222.8, y: -105.49999}
+  m_AnchoredPosition: {x: -193.7, y: -105.49999}
   m_SizeDelta: {x: 114.7215, y: 81.0303}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &204538802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204538800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bbff6872199944ee8e2f1c87771e50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &204538803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +558,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.32941177, g: 1, b: 0.3254902, a: 1}
+    m_NormalColor: {r: 0.39101997, g: 0.7575592, b: 0.9528302, a: 1}
     m_HighlightedColor: {r: 0.8301887, g: 0.4503382, b: 0.7482268, a: 1}
     m_PressedColor: {r: 0.062299743, g: 0.11279443, b: 0.5283019, a: 1}
     m_SelectedColor: {r: 0.32941177, g: 1, b: 0.3254902, a: 1}
@@ -592,7 +580,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 204538804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 204538806}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &204538804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32878476, g: 1, b: 0.3254717, a: 1}
+  m_Color: {r: 0.93980026, g: 0.9716981, b: 0.93961376, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -631,6 +631,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204538800}
   m_CullTransparentMesh: 1
+--- !u!114 &204538806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204538800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f91c56166886649e1a15b74456d6ceae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 43428061}
 --- !u!1 &241485619
 GameObject:
   m_ObjectHideFlags: 0

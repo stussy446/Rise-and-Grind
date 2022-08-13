@@ -19,6 +19,7 @@ TagManager:
   - Starting Checkpoint
   - Golden Bean
   - Karen Hitbox
+  - Pause Menu
   layers:
   - Default
   - TransparentFX
