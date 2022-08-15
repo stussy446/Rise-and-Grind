@@ -9,20 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     Vector2 currentPlayerSpawnPoint;
-    int numberOfSpawns = 0;
-    //GameObject startingCheckpoint;
-
-    //public Vector2 SpawnPoint
-    //{
-    //    get => currentPlayerSpawnPoint;
-    //    set => currentPlayerSpawnPoint = value;
-    //}
-
-    //public int NumberOfSpawns
-    //{
-    //    get => numberOfSpawns;
-    //    set => numberOfSpawns = value;
-    //}
+   
 
     private void Awake()
     {
@@ -40,15 +27,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //public Vector2 SetPlayerSpawnPoint()
-    //{
-    //    return currentPlayerSpawnPoint;
-    //}
-
-
-    /// <summary>
-    /// loads next level in the game, if there is no next level, resets to first level 
-    /// </summary>
     public void LoadNextLevel()
     {
 
@@ -67,7 +45,6 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(currentSceneIndex);
         }
 
-        numberOfSpawns = 0;
 
     }
 

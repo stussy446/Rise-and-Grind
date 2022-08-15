@@ -21,18 +21,6 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         playerTransform = GetComponent<Transform>();
         gameManager = FindObjectOfType<GameManager>();
 
-        //if (gameManager.NumberOfSpawns == 0)
-        //{
-        //    gameManager.NumberOfSpawns++;
-        //    GameObject startPos = GameObject.FindGameObjectWithTag("Starting Checkpoint");
-        //    playerTransform.position = startPos.GetComponent<Transform>().position;
-        //    Destroy(startPos);
-
-        //}
-        //else
-        //{
-        //  playerTransform.position = gameManager.SetPlayerSpawnPoint();
-        //}
 
         StartCoroutine(DelaySingleton());
 
@@ -106,10 +94,22 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     public IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathLength);
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         healthPoints = 3f;
-        SceneManager.LoadScene(currentSceneIndex);
+        gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        playerTransform.rotation =  new Quaternion(0, 0, 0, 0);
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
         uiManager.UpdatePlayerHealth(healthPoints);
+        MovePlayerToCheckpoint();
+        
+    }
+
+
+    void MovePlayerToCheckpoint()
+    {
+        Checkpoint checkpoint = FindObjectOfType<CheckpointManager>().GetLastCheckpointPassed();
+        playerTransform.position = checkpoint.transform.position;
     }
 
 }
