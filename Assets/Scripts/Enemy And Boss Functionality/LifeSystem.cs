@@ -12,11 +12,34 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     [SerializeField] CapsuleCollider2D damageTakingCollider;
 
     Animator animator;
+    PlayerLifeSystem player;
+    Vector2 startingPos;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        
+        player = FindObjectOfType<PlayerLifeSystem>();
+        Debug.Log(player);
+        startingPos = GetComponent<Transform>().position;
+        gameObject.SetActive(false);
+
+    }
+
+    private void OnEnable()
+    {
+        player.onPlayerDeath += ResetBoss;
+    }
+
+    private void OnDisable()
+    {
+        player.onPlayerDeath -= ResetBoss;
+    }
+
+
+    private void ResetBoss()
+    {
+        GetComponent<Transform>().position = startingPos;
+        gameObject.SetActive(false);
     }
 
 
@@ -62,8 +85,14 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
         {
             FindObjectOfType<ExitGate>().Activate();
         }
+
+
         Destroy(gameObject);
     }
+
+
+  
+    
 
     
 }

@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
 {
@@ -14,6 +14,8 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     UIManager uiManager;
     SoundManager soundManager;
     GameManager gameManager;
+
+    public event Action onPlayerDeath;
 
     void Start()
     {
@@ -101,6 +103,7 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
         uiManager.UpdatePlayerHealth(healthPoints);
+        onPlayerDeath?.Invoke();
         MovePlayerToCheckpoint();
         
     }
