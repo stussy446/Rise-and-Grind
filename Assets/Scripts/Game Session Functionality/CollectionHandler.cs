@@ -10,6 +10,11 @@ public class CollectionHandler : MonoBehaviour
 
     public int GetPointValue() { return pointValue;  }
 
+    private void Awake()
+    {
+
+    }
+
     private void Start()
     {
         StartCoroutine(DelaySingleton());

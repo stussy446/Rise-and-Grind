@@ -10,10 +10,42 @@ public class CameraTriggerHandler : MonoBehaviour
     [SerializeField] float delayLength = 1f;
     [SerializeField] GameObject karen;
 
+    PlayerLifeSystem player;
+    int switchCount = 0;
+
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerLifeSystem>();
+    }
+    private void Start()
+    {
+        for (int i = 0; i < gates.Length; i++)
+        {
+            gates[i].SetActive(false);
+        }
+       
+    }
+
+    private void OnEnable()
+    {
+        player.onPlayerDeath += ResetGates;
+    }
+
+
+    private void OnDisable()
+    {
+        player.onPlayerDeath -= ResetGates;
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        cinemachineSwitcher.SwitchState();
+        if (switchCount == 0)
+        {
+            cinemachineSwitcher.SwitchState();
+            switchCount++;
+        }
         if (gates.Length > 0)
         {
             StartCoroutine(ActivateGates());
@@ -31,6 +63,18 @@ public class CameraTriggerHandler : MonoBehaviour
             gate.SetActive(true);
 
         }
+    }
+
+
+    private void ResetGates()
+    {
+        for (int i = 0; i < gates.Length; i++)
+        {
+            gates[i].SetActive(false);
+        }
+
+        GetComponent<BoxCollider2D>().enabled = true;
+
     }
 
 

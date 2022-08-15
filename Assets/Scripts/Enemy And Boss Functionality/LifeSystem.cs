@@ -15,11 +15,15 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     PlayerLifeSystem player;
     Vector2 startingPos;
 
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerLifeSystem>();
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerLifeSystem>();
-        Debug.Log(player);
         startingPos = GetComponent<Transform>().position;
         gameObject.SetActive(false);
 
