@@ -3654,6 +3654,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087292158, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 4246364465489594469}
     - target: {fileID: 2002133040, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.04173068
@@ -3733,14 +3737,14 @@ PrefabInstance:
     - target: {fileID: 4603906762886207826, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 405384911, guid: 9f18dd7fde2f94cd6919b18d56fd0fc0, type: 3}
     - target: {fileID: 4603906762886207826, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4603906762886207826, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_RootOrder
@@ -3804,6 +3808,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+--- !u!95 &4246364465489594469 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1747427609, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+  m_PrefabInstance: {fileID: 4246364465489594468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7093514814181203452
 PrefabInstance:
   m_ObjectHideFlags: 0

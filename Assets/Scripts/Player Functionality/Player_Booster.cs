@@ -16,6 +16,7 @@ public class Player_Booster : MonoBehaviour
     int beansLayerMask = 8;
     int goldenBeanLayerMask = 14;
     [SerializeField] float secondsToWait = 1f;
+    [SerializeField] Animator playerAnimator;
 
     public UnityEvent GoldenBeanTouched;
 
@@ -56,6 +57,8 @@ private void OnTriggerEnter2D(Collider2D collision)
             soundManager.Play("BeanBoost");
             boostValue = collision.gameObject.GetComponent<Object_BoostValueHolder>();
             ProcessBoost(boostValue);
+            playerAnimator.SetTrigger("BrownBeanBoosting");
+            
         }
         else if (collision.gameObject.layer == goldenBeanLayerMask)
         {
