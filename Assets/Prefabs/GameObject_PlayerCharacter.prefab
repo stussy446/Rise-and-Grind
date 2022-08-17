@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToWait: 1
+  playerAnimator: {fileID: 1747427609}
   GoldenBeanTouched:
     m_PersistentCalls:
       m_Calls:
