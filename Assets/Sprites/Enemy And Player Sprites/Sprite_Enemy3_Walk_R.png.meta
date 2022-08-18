@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f18dd7fde2f94cd6919b18d56fd0fc0
+guid: 1d8fd893f2a644131a518608014fb88f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_0
+      name: Sprite_Enemy3_Walk_R_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 7
         y: 0
-        width: 17
-        height: 32
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6072c0fd59524905ad8d00a84a47103
-      internalID: 1908466219
+      spriteID: de312258284e749aaa4654f19704844e
+      internalID: 83542680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_1
+      name: Sprite_Enemy3_Walk_R_1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 39
         y: 0
-        width: 17
-        height: 32
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,19 +151,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4340f4cd3d914a538b43505f30d9ec3
-      internalID: -1073565174
+      spriteID: 2741cd5827b3f42b689c09ca9e9b4a6f
+      internalID: -1568779089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_2
+      name: Sprite_Enemy3_Walk_R_2
       rect:
         serializedVersion: 2
-        x: 69
+        x: 71
         y: 0
-        width: 17
+        width: 25
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,19 +172,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32df5c1ec864a4137b6904312e57454c
-      internalID: 559622906
+      spriteID: f19d0dcc11ba742989930bec8684e317
+      internalID: 426308082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_3
+      name: Sprite_Enemy3_Walk_R_3
       rect:
         serializedVersion: 2
-        x: 101
+        x: 103
         y: 0
-        width: 17
+        width: 25
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58303915d83934e0eac7a4a2bae02a25
-      internalID: -449438751
+      spriteID: c02dcc47fe17c49e489fab864e633378
+      internalID: 1967224787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_4
+      name: Sprite_Enemy3_Walk_R_4
       rect:
         serializedVersion: 2
-        x: 132
+        x: 135
         y: 0
-        width: 17
-        height: 32
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19798de30deb745fd90276d5aa38b217
-      internalID: -1118258290
+      spriteID: dbc5beec3f5b84057a06caa206a34bb7
+      internalID: 379112289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_5
+      name: Sprite_Enemy3_Walk_R_5
       rect:
         serializedVersion: 2
-        x: 164
+        x: 167
         y: 0
-        width: 17
-        height: 32
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,19 +235,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3eb6d7ad466e4ff8908d70e0c37ef17
-      internalID: -1243041114
+      spriteID: fb8a8c2e136494d1dabe4ee47d50fedb
+      internalID: 1777956892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_6
+      name: Sprite_Enemy3_Walk_R_6
       rect:
         serializedVersion: 2
-        x: 196
+        x: 199
         y: 0
-        width: 17
+        width: 25
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,19 +256,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42454ff3fb5b04765a1746de26ed8acc
-      internalID: 38668960
+      spriteID: 08670d4f6fa724a228aedb43b3663a5f
+      internalID: 810063991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_7
+      name: Sprite_Enemy3_Walk_R_7
       rect:
         serializedVersion: 2
-        x: 228
+        x: 231
         y: 0
-        width: 17
+        width: 25
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -277,134 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1091742dec8404c93a65cad6a61050
-      internalID: -2105064048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 0
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68294121e85cd450f9771a3c1750dae3
-      internalID: 1071436962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 292
-        y: 0
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0f55e6469ca64e62be4707e36a85a9b
-      internalID: 1979257960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 0
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b53a2166d5613440482f95ab5e1e2c47
-      internalID: 580322211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 356
-        y: 0
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb3129047d1524a359652bfcc9d324d2
-      internalID: 1232745233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 388
-        y: 0
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d4de7c851cd141e59fce5b7ef564f8a
-      internalID: 699552876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SAM_Idle-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c65993991b5c46289ef1c0990222932
-      internalID: -2118853339
+      spriteID: 9de4610f8ef664a74bd8ed5cc79f95a3
+      internalID: 1356285285
       vertices: []
       indices: 
       edges: []
@@ -420,20 +294,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_SAM_Idle-Sheet_10: 580322211
-      Sprite_SAM_Idle-Sheet_13: -2118853339
-      Sprite_SAM_Idle-Sheet_0: 1908466219
-      Sprite_SAM_Idle-Sheet_11: 1232745233
-      Sprite_SAM_Idle-Sheet_3: -449438751
-      Sprite_SAM_Idle-Sheet_9: 1979257960
-      Sprite_SAM_Idle-Sheet_12: 699552876
-      Sprite_SAM_Idle-Sheet_7: -2105064048
-      Sprite_SAM_Idle-Sheet_8: 1071436962
-      Sprite_SAM_Idle-Sheet_1: -1073565174
-      Sprite_SAM_Idle-Sheet_4: -1118258290
-      Sprite_SAM_Idle-Sheet_2: 559622906
-      Sprite_SAM_Idle-Sheet_6: 38668960
-      Sprite_SAM_Idle-Sheet_5: -1243041114
+      Sprite_Enemy3_Walk_R_7: 1356285285
+      Sprite_Enemy3_Walk_R_5: 1777956892
+      Sprite_Enemy3_Walk_R_0: 83542680
+      Sprite_Enemy3_Walk_R_3: 1967224787
+      Sprite_Enemy3_Walk_R_6: 810063991
+      Sprite_Enemy3_Walk_R_4: 379112289
+      Sprite_Enemy3_Walk_R_1: -1568779089
+      Sprite_Enemy3_Walk_R_2: 426308082
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
