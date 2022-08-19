@@ -60,6 +60,7 @@ public class Boss_Move : StateMachineBehaviour
         if (bossTransform != null)
         {
             bossTransform.eulerAngles = new Vector3(0, angle, 0);
+            
         }
     }
 
