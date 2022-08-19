@@ -1,16 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
-using System;
+
 
 public class DialogueSwitcher : MonoBehaviour
 {
 
     [SerializeField] GameObject karenDialogueBox;
     [SerializeField] GameObject samDialogueBox;
+    [SerializeField] GameObject nextLineButton;
 
     PlayerControls dialogueControls;
     PlayableDirector director;
@@ -45,21 +45,22 @@ public class DialogueSwitcher : MonoBehaviour
             line.enabled = false;
         }
 
+        nextLineButton.SetActive(false);
+
 
     }
 
     private void OnEnable()
     {
         dialogueControls = new PlayerControls();
-        dialogueControls.UI.Enable();
-        dialogueControls.UI.GoToNextLineOfDialogue.performed += SwitchDialogue;
+        //dialogueControls.UI.GoToNextLineOfDialogue.performed += SwitchDialogue;
     }
 
    
     private void OnDisable()
     {
         dialogueControls.UI.Disable();
-        dialogueControls.UI.GoToNextLineOfDialogue.performed -= SwitchDialogue;
+        //dialogueControls.UI.GoToNextLineOfDialogue.performed -= SwitchDialogue;
 
     }
 
@@ -67,16 +68,37 @@ public class DialogueSwitcher : MonoBehaviour
 
     public void StartDialogue()
     {
-
+        dialogueControls.UI.Enable();
+        nextLineButton.SetActive(true);
         samLines[0].enabled = true; // this needs to be 0 when the dialogue works
         Debug.Log(samLines[currentSamLine].text);
         currentCharacter = "Sam";
     }
 
 
-    private void SwitchDialogue(InputAction.CallbackContext obj)
-    {
+    //private void SwitchDialogue(InputAction.CallbackContext obj)
+    //{
 
+    //    if (currentSamLine == totalLines / 2)
+    //    {
+    //        EndScene();
+    //        return;
+    //    }
+
+    //    if (currentLineCount < totalLines && currentCharacter == "Sam")
+    //    {
+    //        SwitchToKaren();
+    //    }
+    //    else if (currentLineCount < totalLines && currentCharacter == "Karen")
+    //    {
+    //        SwitchToSam();
+    //    }
+
+    //    currentLineCount++;
+    //}
+
+    public void ButtonSwitchDialogue()
+    {
         if (currentSamLine == totalLines / 2)
         {
             EndScene();
@@ -93,7 +115,9 @@ public class DialogueSwitcher : MonoBehaviour
         }
 
         currentLineCount++;
+
     }
+
 
 
     private void EndScene()
@@ -118,8 +142,6 @@ public class DialogueSwitcher : MonoBehaviour
     {
         Debug.Log(karenLines[currentKarenLine].text);
         currentCharacter = "Karen";
-        //Debug.Log("Sams current line:" + samLines[currentSamLine].text);
-        //Debug.Log("Karens current line:" + karenLines[currentSamLine].text);
 
         samLines[currentSamLine].enabled = false;
         karenLines[currentKarenLine].enabled = true;
