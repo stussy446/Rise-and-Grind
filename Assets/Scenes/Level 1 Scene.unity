@@ -10895,14 +10895,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rig  (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4603906762886207826, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1908466219, guid: 9f18dd7fde2f94cd6919b18d56fd0fc0, type: 3}
-    - target: {fileID: 4603906762886207826, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_RootOrder
       value: 2

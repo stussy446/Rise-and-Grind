@@ -163,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 806536044689633824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.44, y: -3.52, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3258906183795033446}
@@ -260,10 +260,6 @@ MonoBehaviour:
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: adfb504c-d441-4efd-a851-5cb94cf78c0f
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 586bc719-327d-483a-9a14-0a12e236f4e6
     m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
@@ -306,6 +302,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9d4c51e2-2800-4c0c-9766-debff4e78087
     m_ActionName: GoldenPlayer/Boost[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a0d1c7ce-a594-4a8a-bbc9-21c5cc987ed7
+    m_ActionName: UI/GoToNextLineOfDialogue[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -526,7 +526,7 @@ SpriteRenderer:
   m_SortingLayerID: 1277996091
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2072983832, guid: 9f18dd7fde2f94cd6919b18d56fd0fc0, type: 3}
+  m_Sprite: {fileID: 1908466219, guid: 9f18dd7fde2f94cd6919b18d56fd0fc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
