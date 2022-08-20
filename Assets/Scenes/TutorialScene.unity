@@ -191,6 +191,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 546107731, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 673733228, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -36
+      objectReference: {fileID: 0}
     - target: {fileID: 5690436251361902715, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
       propertyPath: m_Name
       value: 'UI Manager '
