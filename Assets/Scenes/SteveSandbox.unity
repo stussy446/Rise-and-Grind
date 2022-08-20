@@ -585,6 +585,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 204538801, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -130.09985
+      objectReference: {fileID: 0}
+    - target: {fileID: 204538801, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.3000488
+      objectReference: {fileID: 0}
     - target: {fileID: 5690436251361902715, guid: 305605051eda34cc5814ab8965ae3fe5, type: 3}
       propertyPath: m_Name
       value: 'UI Manager '
@@ -2607,9 +2615,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2002133039, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 673972085289376365, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 806536044689633824, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_Name
       value: 'Player Rig '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246364465489594470, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5110914839505517976, guid: 2f919e34159a843099e36a3e725a9fec, type: 3}
       propertyPath: m_RootOrder
