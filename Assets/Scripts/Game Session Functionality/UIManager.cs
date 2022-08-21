@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -56,6 +53,9 @@ public class UIManager : MonoBehaviour
     /// <param name="healthRemaining"></param>
     public void UpdatePlayerHealth(float healthRemaining)
     {
-        lifeText.text = "= " + healthRemaining;
+        if (healthRemaining >= 0)
+        {
+            lifeText.text = "= " + healthRemaining;
+        }
     }
 }
