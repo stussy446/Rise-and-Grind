@@ -20,6 +20,8 @@ TagManager:
   - Golden Bean
   - Karen Hitbox
   - Pause Menu
+  - Life Image
+  - Death Image
   layers:
   - Default
   - TransparentFX

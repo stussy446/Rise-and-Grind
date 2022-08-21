@@ -13,17 +13,16 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
 
     UIManager uiManager;
     SoundManager soundManager;
-    GameManager gameManager;
+    UIHealthIcon uiHearts;
 
     public event Action onPlayerDeath;
+    public event Action onDeathUISwitch;
 
     void Start()
     {
-       
+
         playerTransform = GetComponent<Transform>();
-        gameManager = FindObjectOfType<GameManager>();
-
-
+        uiHearts = FindObjectOfType<UIHealthIcon>().GetComponent<UIHealthIcon>(); 
         StartCoroutine(DelaySingleton());
 
     }
@@ -40,6 +39,8 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         get => currentCheckpointPos;
         set => currentCheckpointPos = value;
     }
+
+    public float HealthPoints { get; private set; }
 
 
     /// <summary>
@@ -59,7 +60,7 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
 
         if (healthPoints <= float.Epsilon)
         {
-            healthPoints = 0;
+            uiHearts.SwitchToDeathHeart();
             Die();
         }
     }
@@ -99,20 +100,26 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
         healthPoints = 3f;
         gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        playerTransform.rotation =  new Quaternion(0, 0, 0, 0);
+        playerTransform.rotation = new Quaternion(0, 0, 0, 0);
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
         uiManager.UpdatePlayerHealth(healthPoints);
         onPlayerDeath?.Invoke();
         MovePlayerToCheckpoint();
-        
+
     }
 
 
     void MovePlayerToCheckpoint()
     {
-        Checkpoint checkpoint = FindObjectOfType<CheckpointManager>().GetLastCheckpointPassed();
-        playerTransform.position = checkpoint.transform.position;
-    }
 
+        if (FindObjectOfType<CheckpointManager>() != null)
+        {
+            Checkpoint checkpoint = FindObjectOfType<CheckpointManager>().GetLastCheckpointPassed();
+            playerTransform.position = checkpoint.transform.position;
+        }
+
+        uiHearts.SwitchToLifeHeart();
+
+    }
 }
