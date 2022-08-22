@@ -1,9 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 using UnityEngine.Playables;
-
 
 public class DialogueSwitcher : MonoBehaviour
 {
@@ -53,14 +51,12 @@ public class DialogueSwitcher : MonoBehaviour
     private void OnEnable()
     {
         dialogueControls = new PlayerControls();
-        //dialogueControls.UI.GoToNextLineOfDialogue.performed += SwitchDialogue;
     }
 
    
     private void OnDisable()
     {
         dialogueControls.UI.Disable();
-        //dialogueControls.UI.GoToNextLineOfDialogue.performed -= SwitchDialogue;
 
     }
 
@@ -70,32 +66,9 @@ public class DialogueSwitcher : MonoBehaviour
     {
         dialogueControls.UI.Enable();
         nextLineButton.SetActive(true);
-        samLines[0].enabled = true; // this needs to be 0 when the dialogue works
-        Debug.Log(samLines[currentSamLine].text);
+        samLines[0].enabled = true; 
         currentCharacter = "Sam";
     }
-
-
-    //private void SwitchDialogue(InputAction.CallbackContext obj)
-    //{
-
-    //    if (currentSamLine == totalLines / 2)
-    //    {
-    //        EndScene();
-    //        return;
-    //    }
-
-    //    if (currentLineCount < totalLines && currentCharacter == "Sam")
-    //    {
-    //        SwitchToKaren();
-    //    }
-    //    else if (currentLineCount < totalLines && currentCharacter == "Karen")
-    //    {
-    //        SwitchToSam();
-    //    }
-
-    //    currentLineCount++;
-    //}
 
     public void ButtonSwitchDialogue()
     {
@@ -119,16 +92,13 @@ public class DialogueSwitcher : MonoBehaviour
     }
 
 
-
     private void EndScene()
     {
-        Debug.Log("Scene over");
         dialogueControls.UI.Disable();
         director = GameObject.FindGameObjectWithTag("Finish").GetComponent<PlayableDirector>();
         StartCoroutine(GoToTutorial());
         
     }
-
 
     IEnumerator GoToTutorial()
     {
@@ -140,7 +110,6 @@ public class DialogueSwitcher : MonoBehaviour
 
     private void SwitchToKaren()
     {
-        Debug.Log(karenLines[currentKarenLine].text);
         currentCharacter = "Karen";
 
         samLines[currentSamLine].enabled = false;
@@ -151,8 +120,6 @@ public class DialogueSwitcher : MonoBehaviour
     private void SwitchToSam()
     {
         currentCharacter = "Sam";
-        Debug.Log(currentSamLine);
-        Debug.Log(samLines[currentSamLine].text);
         samLines[currentSamLine].enabled = true;
         karenLines[currentKarenLine].enabled = false;
         currentKarenLine++;

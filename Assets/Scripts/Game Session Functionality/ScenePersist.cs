@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScenePersist : MonoBehaviour
@@ -21,7 +19,6 @@ public class ScenePersist : MonoBehaviour
 
 
         DontDestroyOnLoad(gameObject);
-
 
     }
 

@@ -13,7 +13,6 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
     public void TakeDamage()
     {
         healthPoints -= 1f;
-        // play damage sound 
     }
 
 
@@ -35,15 +34,13 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
 
     public void Die()
     {
-        // set up animation stuff
-        // play death sound 
+
         StartCoroutine(DeathSequence());
     }
 
     public IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathLength);
-        // death stuff (animations etc)
         gameObject.SetActive(false);
     }
 

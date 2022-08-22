@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CollectionHandler : MonoBehaviour
 {
@@ -9,11 +7,6 @@ public class CollectionHandler : MonoBehaviour
     UIManager uiManager;
 
     public int GetPointValue() { return pointValue;  }
-
-    private void Awake()
-    {
-
-    }
 
     private void Start()
     {
@@ -40,7 +33,5 @@ public class CollectionHandler : MonoBehaviour
         gameObject.SetActive(false);
         uiManager.UpdateScore(pointValue);
     }
-
     
-
 }

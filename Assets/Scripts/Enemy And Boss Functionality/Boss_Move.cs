@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss_Move : StateMachineBehaviour
@@ -8,16 +7,12 @@ public class Boss_Move : StateMachineBehaviour
     [Tooltip("distance from player when boss attacks")][SerializeField] float attackRange = 3f;
     [Tooltip("length of time before boss flips")][SerializeField] float flipDelay = 2f;
 
-
     Transform player;
     Rigidbody2D bossRigidBody;
     Transform bossTransform;
     SpriteRenderer bossSprite;
     MonoBehaviour mb;
 
-
-
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -27,8 +22,6 @@ public class Boss_Move : StateMachineBehaviour
         mb = player.GetComponent<MonoBehaviour>();
     }
 
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Vector2 target = new Vector2(player.position.x, player.position.y);
@@ -52,7 +45,6 @@ public class Boss_Move : StateMachineBehaviour
 
     }
 
-
     IEnumerator FlipBoss(int angle)
     {
      
@@ -64,8 +56,6 @@ public class Boss_Move : StateMachineBehaviour
         }
     }
 
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");

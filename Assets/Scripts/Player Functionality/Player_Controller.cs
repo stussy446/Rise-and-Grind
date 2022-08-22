@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
@@ -158,12 +156,10 @@ public class Player_Controller : MonoBehaviour
         if (!IsGrounded())
         {
             _playerRigidBody.AddForce(movement / jumpMoveSpeedDivider * Vector2.right * Time.deltaTime);
-            //_playerRigidBody.AddForce((processedMoveVector / jumpMoveSpeedDivider) * Time.deltaTime, ForceMode2D.Impulse);
         }
         else
         {
             _playerRigidBody.AddForce(movement * Vector2.right * Time.deltaTime);
-            // _playerRigidBody.AddForce(processedMoveVector * Time.deltaTime, ForceMode2D.Impulse);
             if (Mathf.Abs(moveInputXValue) < 0.01f)
             {
                 float amount = Mathf.Min(Mathf.Abs(_playerRigidBody.velocity.x), Mathf.Abs(frictionAmount));
@@ -193,11 +189,6 @@ public class Player_Controller : MonoBehaviour
         {
             return;
         }
-        //bool playerHasHorizontalSpeed = Mathf.Abs(_playerRigidBody.velocity.x) > Mathf.Epsilon;
-        //if (playerHasHorizontalSpeed)
-        //{
-        //    transform.localScale = new Vector2(Mathf.Sign(_playerRigidBody.velocity.x), 1f);
-        //}
     }
 
 

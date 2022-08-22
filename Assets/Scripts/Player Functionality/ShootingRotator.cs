@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingRotator : MonoBehaviour
 {
-
-    private Camera mainCam;
     private Vector3 mousePos;
     [SerializeField] Transform playerTransform;
     [SerializeField] GameObject crossHairs;
@@ -13,7 +9,6 @@ public class ShootingRotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Cursor.visible = false;
     }
 

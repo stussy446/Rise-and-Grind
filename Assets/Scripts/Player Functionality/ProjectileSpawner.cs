@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
@@ -15,7 +13,6 @@ public class ProjectileSpawner : MonoBehaviour
     {
         player = FindObjectOfType<Player_Controller>();
     }
-
 
     /// <summary>
     /// called when the fire button is pressed (See Player Controller Script)
@@ -37,7 +34,6 @@ public class ProjectileSpawner : MonoBehaviour
             shotForce = new Vector3(xShotSpeed, yShotSpeed, 0);
 
         }
-        //shotForce = new Vector3(xShotSpeed, yShotSpeed, 0);
 
         projectile.GetComponent<Rigidbody2D>().AddRelativeForce(shotForce);
 

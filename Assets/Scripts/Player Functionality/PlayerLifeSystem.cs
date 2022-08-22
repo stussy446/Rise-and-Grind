@@ -16,7 +16,6 @@ public class PlayerLifeSystem : MonoBehaviour, ILifeSystem
     UIHealthIcon uiHearts;
 
     public event Action onPlayerDeath;
-    public event Action onDeathUISwitch;
 
     void Start()
     {
