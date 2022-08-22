@@ -10,6 +10,15 @@ public class LerpMover : MonoBehaviour
 
     private float positionPercent;
     private int direction = 1;
+    Animator animator;
+
+    private void Start()
+    {
+        if (GetComponentInChildren<Animator>() != null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+    }
 
     void Update()
     {
@@ -31,10 +40,12 @@ public class LerpMover : MonoBehaviour
     {
         if (positionPercent >= 1 && direction == 1)
         {
+            animator.SetBool("MovingRight", false);
             direction = -1;
         }
         else if (positionPercent <= 0 && direction == -1)
         {
+            animator.SetBool("MovingRight", true);
             direction = 1;
         }
     }

@@ -33,6 +33,10 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
 
     public void Die()
     {
+        if (GetComponent<SpriteRenderer>() != null)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
 
         StartCoroutine(DeathSequence());
     }
