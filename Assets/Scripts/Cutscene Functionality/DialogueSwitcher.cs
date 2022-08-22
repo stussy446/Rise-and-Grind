@@ -133,8 +133,8 @@ public class DialogueSwitcher : MonoBehaviour
     IEnumerator GoToTutorial()
     {
         yield return new WaitForSeconds(secondsToWait);
+        SoundManager.instance.ResetSound();
         FindObjectOfType<GameManager>().LoadNextLevel();
-        Debug.Log("Destroying Scene Persist");
         FindObjectOfType<ScenePersist>().ResetScenePersist();
     }
 

@@ -6,6 +6,8 @@ public class SoundManager: MonoBehaviour
 {
 
     [SerializeField] Sound[] sounds;
+    float[] soundVolumes;
+    int count = 0;
 
     public static SoundManager instance; // static reference to current SoundManager in scene
 
@@ -32,7 +34,9 @@ public class SoundManager: MonoBehaviour
             sound.audioSource.volume = sound.volume;
             sound.audioSource.pitch = sound.pitch;
             sound.audioSource.loop = sound.loop;
+
         }
+
 
     }
 
@@ -40,6 +44,14 @@ public class SoundManager: MonoBehaviour
     private void Start()
     {
         Play("Effervesce");
+        soundVolumes = new float[sounds.Length];
+        foreach (Sound sound  in sounds)
+        {
+            soundVolumes[count] = sound.audioSource.volume;
+            count++;
+        }
+
+        count = 0;
     }
 
 
@@ -56,6 +68,32 @@ public class SoundManager: MonoBehaviour
             sound.audioSource.Play();
 
         }
+    }
+
+
+    public void Mute()
+    {
+        foreach (Sound sound in sounds)
+        {
+            sound.audioSource.volume = 0f; 
+        }
+    }
+
+
+    public void UnMute()
+    {
+        foreach (Sound sound in sounds)
+        {
+            sound.audioSource.volume = soundVolumes[count];
+            count++;
+        }
+
+        count = 0;
+    }
+
+    public void ResetSound()
+    {
+        Destroy(this.gameObject);
     }
     
 }
