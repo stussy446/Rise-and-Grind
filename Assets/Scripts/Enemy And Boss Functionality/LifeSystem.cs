@@ -18,6 +18,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     {
         player = FindObjectOfType<PlayerLifeSystem>();
     }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
