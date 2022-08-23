@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8651707746261732455}
   - component: {fileID: 8651707746261732453}
   - component: {fileID: 8651707746261732454}
+  - component: {fileID: 1818759426}
   m_Layer: 14
   m_Name: Golden Bean
   m_TagString: Bean
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1200611585
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 794079221, guid: caf4b810b6d2049efa70bcca08274642, type: 3}
+  m_Sprite: {fileID: -487234131, guid: caf4b810b6d2049efa70bcca08274642, type: 3}
   m_Color: {r: 1, g: 0.9689095, b: 0.0990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,3 +116,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsUntilReactivation: 2.5
+--- !u!114 &1818759426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651707746261732449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c234706b15c874876a30ee6b3ebe5cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSpeed: 1
