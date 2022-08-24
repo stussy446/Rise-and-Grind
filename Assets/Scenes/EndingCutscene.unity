@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 1788303870}
   - component: {fileID: 1788303869}
   - component: {fileID: 1788303868}
+  - component: {fileID: 1788303871}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -885,3 +886,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!320 &1788303871
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788303866}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 9ea2e6bc43d87b440a48846a45460f06, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
