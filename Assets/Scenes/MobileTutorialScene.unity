@@ -1702,7 +1702,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move Left and Right with [ARROW KEYS]
+  m_Text: 'Drag on left of screen to move left and right '
 --- !u!222 &867556925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13160,7 +13160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Throw coffee and food with [F] '
+  m_Text: 'Press fire button to shoot projectiles '
 --- !u!222 &1508159512
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14734,7 +14734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jump with [SPACE]
+  m_Text: 'Press right side of screen to jump '
 --- !u!222 &1988448024
 CanvasRenderer:
   m_ObjectHideFlags: 0
