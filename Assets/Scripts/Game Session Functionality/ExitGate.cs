@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExitGate : MonoBehaviour
@@ -15,7 +13,6 @@ public class ExitGate : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FindObjectOfType<ScenePersist>().ResetScenePersist();
-        Debug.Log("Destroying Scene Persist");
         gameManager.LoadNextLevel();
     }
 
