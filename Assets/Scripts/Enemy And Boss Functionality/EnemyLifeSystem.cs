@@ -50,6 +50,7 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
 
         verticalCamera.GetComponent<CinemachineShake>().ShakeCamera(2f, .25f);
         horizontalCamera.GetComponent<CinemachineShake>().ShakeCamera(2f, .25f);
+        SoundManager.instance.PlayPartOfSound("EnemyDeath", 0.25f);
         StartCoroutine(DeathSequence());
     }
 
