@@ -20,6 +20,7 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
 
     public void TakeDamage()
     {
+        SoundManager.instance.PlayPartOfSound("ProjectileBreak", 0.35f);
         healthPoints -= 1f;
     }
 

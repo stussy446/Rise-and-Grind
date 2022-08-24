@@ -64,6 +64,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
         if (damageTakingCollider.IsTouchingLayers(LayerMask.GetMask("Projectile")))
         {
             horizontalCamera.GetComponent<CinemachineShake>().ShakeCamera(2f, .5f);
+            SoundManager.instance.PlayPartOfSound("ProjectileBreak", 0.35f);
             TakeDamage();
         }
 

@@ -21,6 +21,16 @@ public class ProjectileLifeSpan : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Rigidbody2D>().isKinematic = true;
         }
+
+        if (GetComponent<BoxCollider2D>().IsTouchingLayers(LayerMask.GetMask("Platforms"))
+            || GetComponent<BoxCollider2D>().IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Rigidbody2D>().isKinematic = true;
+          
+            SoundManager.instance.PlayPartOfSound("ProjectileBreak", 0.35f);
+
+        }
     }
 
 
