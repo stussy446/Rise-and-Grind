@@ -7,6 +7,15 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
     [Tooltip("amount of hp object has")][SerializeField] float healthPoints = 1f;
     [Tooltip("holds reference to ground layer")][SerializeField] LayerMask groundLayer;
     [SerializeField] float deathLength = .25f;
+    GameObject verticalCamera;
+    GameObject horizontalCamera;
+
+    private void Awake()
+    {
+        verticalCamera = GameObject.FindGameObjectWithTag("Vertical Camera");
+        horizontalCamera = GameObject.FindGameObjectWithTag("Horizontal Camera");
+
+    }
 
 
     public void TakeDamage()
@@ -38,6 +47,8 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
             GetComponent<SpriteRenderer>().color = Color.red;
         }
 
+        verticalCamera.GetComponent<CinemachineShake>().ShakeCamera(2f, .25f);
+        horizontalCamera.GetComponent<CinemachineShake>().ShakeCamera(2f, .25f);
         StartCoroutine(DeathSequence());
     }
 
