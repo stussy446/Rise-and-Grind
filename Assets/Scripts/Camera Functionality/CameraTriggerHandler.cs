@@ -58,6 +58,7 @@ public class CameraTriggerHandler : MonoBehaviour
     IEnumerator ActivateGates()
     {
         yield return new WaitForSeconds(delayLength);
+       
         foreach (var gate in gates)
         {
             gate.SetActive(true);
