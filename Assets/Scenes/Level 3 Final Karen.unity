@@ -69438,6 +69438,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3227453416618695884, guid: 2af0f2b8af8f94fa9acceb4842a536b0, type: 3}
   m_PrefabInstance: {fileID: 1821054269}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1853987387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 465539348310218722, guid: d88365380b4454e86bf7efc37df0fda6, type: 3}
+  m_PrefabInstance: {fileID: 1376772615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1866339603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3268600508287581622, guid: 4ced2e2d49fd544df8183b8e361e4ef2, type: 3}
@@ -69630,7 +69635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567973086532254738, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.09
+      value: 8.15
       objectReference: {fileID: 0}
     - target: {fileID: 7567973086532254738, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -69671,7 +69676,7 @@ PrefabInstance:
     - target: {fileID: 7567973086532254739, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: karen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1853987387}
     - target: {fileID: 7567973086532254739, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: gates.Array.size
       value: 1
@@ -69687,7 +69692,7 @@ PrefabInstance:
     - target: {fileID: 7567973086532254739, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: gates.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1821054271}
     - target: {fileID: 7567973086532254740, guid: 52ee75e9bc947408dacbbab655dc1f93, type: 3}
       propertyPath: m_Name
       value: CameraSwitchTrigger
