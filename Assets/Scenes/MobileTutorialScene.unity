@@ -770,6 +770,10 @@ PrefabInstance:
       value: Sprite_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7524317389331509979, guid: 191ef56728f9a4206a4c3af5cf8d2cbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -756591154, guid: ffadb9cd594bc42dd98d790522917e8f, type: 3}
+    - target: {fileID: 7524317389331509979, guid: 191ef56728f9a4206a4c3af5cf8d2cbb, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -12935,7 +12939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268600508287581622, guid: 4ced2e2d49fd544df8183b8e361e4ef2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.939248
+      value: -11.44
       objectReference: {fileID: 0}
     - target: {fileID: 3268600508287581622, guid: 4ced2e2d49fd544df8183b8e361e4ef2, type: 3}
       propertyPath: m_LocalPosition.y
