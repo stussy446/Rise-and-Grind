@@ -503,9 +503,12 @@ MonoBehaviour:
     Creative Commons Attribution 4.0 International    \r\n\r\nSound Effects\r\nContains
     sound effects from Sound effects Pack 2 \xA92017 Swiss Arcade Game Entertainment
     (https://phoenix1291.itch.io/)\r Licensed under Creative Commons Attribution
-    4.0 International \n\r\nSpecial Thanks \r\nOur family and friends\r\nOur beloved
-    pets\r\nIndie Game Academy and their supportive staff\r\nOur Level 3 Cohort mates\r\nAnd
-    most of all\u2026\r\nCoffee\r\n\r\nAll rights reserved \xA92022.\r"
+    4.0 International\n\nContains sounds effects from Death Sounds \xA92021 HighPixel
+    \r\n(https://freesound.org/people/HighPixel/packs/32400/) \r\n\r\n    Contains
+    sound effects from Glass \xA92014 unfa\r\n(https://freesound.org/people/unfa/packs/14014/)
+    \r\n \n\r\nSpecial Thanks \r\nOur family and friends\r\nOur beloved pets\r\nIndie
+    Game Academy and their supportive staff\r\nOur Level 3 Cohort mates\r\nAnd most
+    of all\u2026\r\nCoffee\r\n\r\nAll rights reserved \xA92022.\r"
 --- !u!222 &849866500
 CanvasRenderer:
   m_ObjectHideFlags: 0
