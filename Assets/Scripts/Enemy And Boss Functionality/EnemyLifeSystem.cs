@@ -9,11 +9,13 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
     [SerializeField] float deathLength = .25f;
     GameObject verticalCamera;
     GameObject horizontalCamera;
+    ParticleSystem pSystem;
 
     private void Awake()
     {
         verticalCamera = GameObject.FindGameObjectWithTag("Vertical Camera");
         horizontalCamera = GameObject.FindGameObjectWithTag("Horizontal Camera");
+        pSystem = GetComponentInChildren<ParticleSystem>();
 
     }
 
@@ -36,6 +38,7 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
 
         if (healthPoints <= float.Epsilon)
         {
+            pSystem.Play();
             Die();
         }
     }
@@ -57,6 +60,7 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
     public IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathLength);
+        pSystem.Stop();
         gameObject.SetActive(false);
     }
 

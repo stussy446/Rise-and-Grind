@@ -24,6 +24,7 @@ TagManager:
   - Death Image
   - Vertical Camera
   - Horizontal Camera
+  - Sunglass Enemy Particles
   layers:
   - Default
   - TransparentFX
