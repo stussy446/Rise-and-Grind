@@ -38,7 +38,10 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
 
         if (healthPoints <= float.Epsilon)
         {
-            pSystem.Play();
+            if (pSystem != null)
+            {
+                pSystem.Play();
+            }
             Die();
         }
     }
@@ -60,7 +63,10 @@ public class EnemyLifeSystem : MonoBehaviour, ILifeSystem
     public IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathLength);
-        pSystem.Stop();
+        if (pSystem != null)
+        {
+            pSystem.Stop();
+        }
         gameObject.SetActive(false);
     }
 
