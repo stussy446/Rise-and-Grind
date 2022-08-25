@@ -4832,7 +4832,7 @@ GameObject:
   - component: {fileID: 915775807}
   - component: {fileID: 915775806}
   m_Layer: 0
-  m_Name: Timeline
+  m_Name: IntroTimeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4879,9 +4879,9 @@ PlayableDirector:
     value: {fileID: 793556296}
   - key: {fileID: 4298252330735042004, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
     value: {fileID: 748901977}
-  - key: {fileID: -3129595637424801579, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 416235425}
-  - key: {fileID: -251522070822506866, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1466350169}
   - key: {fileID: -8039053178633273510, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
     value: {fileID: 0}
@@ -4895,6 +4895,26 @@ PlayableDirector:
     value: {fileID: 1199756111}
   - key: {fileID: 8781346605450246640, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
     value: {fileID: 1839979408}
+  - key: {fileID: -4928225424366090223, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 416235425}
+  - key: {fileID: -3875362160431113489, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1975872974}
+  - key: {fileID: 2575444665544862324, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 622115302}
+  - key: {fileID: -8258100750530186698, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1096693187}
+  - key: {fileID: 2053556392043255623, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1088824443}
+  - key: {fileID: -655849175562581715, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1466350169}
+  - key: {fileID: 5951568539657723012, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1785791381}
+  - key: {fileID: -2498390470889909351, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1000638666}
+  - key: {fileID: 4037860114357267633, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1839979408}
+  - key: {fileID: -7970595581826280432, guid: f03880e50280a9c43855299e816f2eaf, type: 2}
+    value: {fileID: 1199756111}
   m_ExposedReferences:
     m_References:
     - 41eb6eb07b8319641bb9fbf1ce5209de: {fileID: 0}
@@ -6796,7 +6816,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 619147739, guid: 0dee0d2e8674b4c16961a24b3a4e6f77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7365,6 +7385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1539132468}
   - component: {fileID: 1539132467}
+  - component: {fileID: 1539132469}
   m_Layer: 0
   m_Name: Sprite_Enemy3_Walk_L_3
   m_TagString: Untagged
@@ -7412,7 +7433,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -81325783, guid: 4d59840b8799f4ffd9dde68f730fe4a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7439,6 +7460,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1539132469
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539132466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1619510727
 GameObject:
   m_ObjectHideFlags: 0

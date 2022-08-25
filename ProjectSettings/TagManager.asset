@@ -22,6 +22,8 @@ TagManager:
   - Pause Menu
   - Life Image
   - Death Image
+  - Vertical Camera
+  - Horizontal Camera
   layers:
   - Default
   - TransparentFX

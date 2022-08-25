@@ -13,10 +13,13 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
     PlayerLifeSystem player;
     Vector2 startingPos;
 
+    GameObject horizontalCamera;
+    float startingHealthPoints;
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerLifeSystem>();
+        horizontalCamera = GameObject.FindGameObjectWithTag("Horizontal Camera");
     }
 
     private void Start()
@@ -25,6 +28,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
         player = FindObjectOfType<PlayerLifeSystem>();
         startingPos = GetComponent<Transform>().position;
         gameObject.SetActive(false);
+        startingHealthPoints = healthPoints;
 
     }
 
@@ -41,6 +45,7 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
 
     private void ResetBoss()
     {
+        healthPoints = startingHealthPoints;
         GetComponent<Transform>().position = startingPos;
         gameObject.SetActive(false);
     }
@@ -58,11 +63,14 @@ public class LifeSystem : MonoBehaviour, ILifeSystem
 
         if (damageTakingCollider.IsTouchingLayers(LayerMask.GetMask("Projectile")))
         {
+            horizontalCamera.GetComponent<CinemachineShake>().ShakeCamera(2f, .5f);
+            SoundManager.instance.PlayPartOfSound("ProjectileBreak", 0.35f);
             TakeDamage();
         }
 
         if (healthPoints <= float.Epsilon)
         {
+            horizontalCamera.GetComponent<CinemachineShake>().ShakeCamera(5f, 1.5f);
             Die();
         }
     }

@@ -69,3 +69,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioSource: {fileID: 0}
+  - name: ProjectileBreak
+    clip: {fileID: 8300000, guid: 7a047f924497849b98daaf3e63d66a6c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 8916a982b82e146f59aaf6c070c9aff6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}

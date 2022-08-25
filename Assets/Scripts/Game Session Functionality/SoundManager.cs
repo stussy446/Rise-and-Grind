@@ -74,7 +74,8 @@ public class SoundManager: MonoBehaviour
     {
         foreach (Sound sound in sounds)
         {
-            sound.audioSource.volume = 0f; 
+            sound.audioSource.volume = 0f;
+          
         }
     }
 
@@ -94,5 +95,18 @@ public class SoundManager: MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-    
+
+
+    public void PlayPartOfSound(string name, float startTime)
+    {
+        Sound sound = Array.Find(sounds, sound => sound.name == name);
+
+        if (sound != null && !sound.audioSource.isPlaying)
+        {
+            sound.audioSource.time += startTime;
+            sound.audioSource.Play();
+        }
+
+    }
+
 }
