@@ -34,6 +34,7 @@ public class SoundManager: MonoBehaviour
             sound.audioSource.pitch = sound.pitch;
             sound.audioSource.loop = sound.loop;
 
+
         }
 
 
@@ -49,6 +50,7 @@ public class SoundManager: MonoBehaviour
             soundVolumes[count] = sound.audioSource.volume;
             count++;
         }
+
 
         count = 0;
     }
