@@ -6,7 +6,7 @@ public class EndCutsceneLoadLevel : MonoBehaviour
     // Start is called before the first frame update
     public void LoadNextLevel()
     {
-        Destroy(GameManager.instance.gameObject);
+        // Destroy(GameManager.instance.gameObject);
         SceneManager.LoadScene(0);
 
     }
