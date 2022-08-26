@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         {
             currentSceneIndex = 0;
             SceneManager.LoadScene(currentSceneIndex);
+            Destroy(this.gameObject);
         }
         else
         {
