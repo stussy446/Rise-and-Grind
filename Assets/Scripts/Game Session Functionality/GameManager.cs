@@ -30,13 +30,18 @@ public class GameManager : MonoBehaviour
         }
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         currentSceneIndex++;
-        
+
+        if (currentSceneIndex == SceneManager.sceneCountInBuildSettings - 2)
+        {
+            Destroy(SoundManager.instance.gameObject);
+        }
+
 
         if (currentSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
             currentSceneIndex = 0;
             SceneManager.LoadScene(currentSceneIndex);
-            Destroy(this.gameObject);
+            
         }
         else
         {
