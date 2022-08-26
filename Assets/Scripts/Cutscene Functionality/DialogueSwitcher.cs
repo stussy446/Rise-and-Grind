@@ -95,7 +95,10 @@ public class DialogueSwitcher : MonoBehaviour
     private void EndScene()
     {
         dialogueControls.UI.Disable();
-        director = GameObject.FindGameObjectWithTag("Finish").GetComponent<PlayableDirector>();
+        if (GameObject.FindGameObjectWithTag("Finish").GetComponent<PlayableDirector>() != null)
+        {
+            director = GameObject.FindGameObjectWithTag("Finish").GetComponent<PlayableDirector>();
+        }
         StartCoroutine(GoToTutorial());
         
     }
