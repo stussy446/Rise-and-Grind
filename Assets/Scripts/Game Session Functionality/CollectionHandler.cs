@@ -28,8 +28,7 @@ public class CollectionHandler : MonoBehaviour
 
     public void HandleCollection()
     {
-        // do animation
-        // play sound
+        SoundManager.instance.Play("Collectible");
         gameObject.SetActive(false);
         uiManager.UpdateScore(pointValue);
     }

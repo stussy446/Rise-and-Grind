@@ -81,3 +81,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioSource: {fileID: 0}
+  - name: Collectible
+    clip: {fileID: 8300000, guid: 847f046c0ee6e4315b197cb7e4218b5f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
