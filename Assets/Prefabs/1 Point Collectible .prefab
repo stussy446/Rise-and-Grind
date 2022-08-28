@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2496150819752138887}
   - component: {fileID: 2496150819752138884}
   - component: {fileID: 8213245350329500764}
+  - component: {fileID: 3416892397458432842}
   m_Layer: 15
   m_Name: '1 Point Collectible '
   m_TagString: Collectible
@@ -115,3 +116,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 1
+--- !u!95 &3416892397458432842
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496150819752138882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed823a890d0ba445da3ec4542a604af5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
