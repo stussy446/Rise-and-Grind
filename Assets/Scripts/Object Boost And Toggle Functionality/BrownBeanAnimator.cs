@@ -6,6 +6,8 @@ public class BrownBeanAnimator : MonoBehaviour
     float startingYPos;
     float maxY;
     float minY;
+    [SerializeField] float topMax = .25f;
+    [SerializeField] float bottomMax = .25f;
     bool isMovingUp = true;
 
     [SerializeField] float animationSpeed = 0.01f;
@@ -15,8 +17,8 @@ public class BrownBeanAnimator : MonoBehaviour
     {
         beanTransform = GetComponent<Transform>();
         startingYPos = beanTransform.position.y;
-        maxY = startingYPos + 0.25f;
-        minY = startingYPos - 0.25f;
+        maxY = startingYPos + topMax;
+        minY = startingYPos - bottomMax;
     }
 
     // Update is called once per frame
