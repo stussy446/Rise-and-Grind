@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroCutscene.unity
     guid: f23b8c208a38f7f448ffa7b346220240
   - enabled: 1
-    path: Assets/Scenes/MobileTutorialScene.unity
-    guid: 94c40197dd123604e909b221bb320da3
+    path: Assets/Scenes/WebglTutorial.unity
+    guid: a49e1f2ed041040feb24a7c56ab7d464
   - enabled: 1
     path: Assets/Scenes/EZLevel 1.unity
     guid: 74eb37e9306e460418bf1a4eb98e9b7a
